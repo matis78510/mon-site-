@@ -1,19 +1,11 @@
-// Fonction pour changer de contenu en cliquant sur les onglets
-document.querySelectorAll('.tablink').forEach(tab => {
-    tab.addEventListener('click', function (e) {
+document.querySelectorAll('.tablink').forEach(link => {
+    link.addEventListener('click', function(e) {
         e.preventDefault();
 
-        // Retirer la classe active de tous les onglets
-        document.querySelectorAll('.tablink').forEach(link => link.classList.remove('active'));
-
-        // Ajouter la classe active à l'onglet cliqué
+        document.querySelectorAll('.tablink').forEach(a => a.classList.remove('active'));
         this.classList.add('active');
 
-        // Cacher tous les contenus des onglets
-        document.querySelectorAll('.tabcontent').forEach(content => content.classList.remove('active'));
-
-        // Afficher le contenu de l'onglet sélectionné
-        const target = document.querySelector(this.getAttribute('href'));
-        target.classList.add('active');
+        document.querySelectorAll('.tabcontent').forEach(tab => tab.classList.remove('active'));
+        document.querySelector(this.getAttribute('href')).classList.add('active');
     });
 });
