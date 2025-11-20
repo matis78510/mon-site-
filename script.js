@@ -5,19 +5,19 @@ const totalSlides = slides.length;
 
 // Fonction pour aller à la slide suivante
 function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides; // Passe à la slide suivante (circular)
+    currentSlide = (currentSlide + 1) % totalSlides;
     updateCarousel();
 }
 
 // Fonction pour aller à la slide précédente
 function prevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Passe à la slide précédente (circular)
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
     updateCarousel();
 }
 
 // Fonction pour mettre à jour le carrousel avec la nouvelle slide
 function updateCarousel() {
-    const newTransformValue = -currentSlide * 100; // Calcule la position du carrousel
+    const newTransformValue = -currentSlide * 100;
     document.querySelector('.carousel').style.transform = `translateX(${newTransformValue}%)`;
 }
 
@@ -29,9 +29,9 @@ const nextButton = document.querySelector('.next');
 const prevButton = document.querySelector('.prev');
 
 if (nextButton) {
-    nextButton.addEventListener('click', nextSlide); // Aller à la slide suivante au clic
+    nextButton.addEventListener('click', nextSlide);
 }
 
 if (prevButton) {
-    prevButton.addEventListener('click', prevSlide); // Aller à la slide précédente au clic
+    prevButton.addEventListener('click', prevSlide);
 }
