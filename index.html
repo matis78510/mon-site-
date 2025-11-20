@@ -3,79 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rodrigues Matis – Présentation</title>
+    <title>Rodrigues Matis – Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1>Rodrigues Matis</h1>
-        <p>Étudiant en Licence Commerciale à l’ILEPS — Alternance aux Bains de Seine Mauldre</p>
+<header>
+    <h1>Rodrigues Matis</h1>
+    <p>Étudiant en Licence Commerciale • ILEPS</p>
+    <p>En alternance aux Bains de Seine Mauldre</p>
 
-        <!-- Liens pros -->
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/rodriguesmatis" target="_blank">LinkedIn</a>
-            <a href="mailto:rodriguesmatis@example.com">Email</a>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/rodriguesmatis" target="_blank">LinkedIn</a>
+        <a href="mailto:rodriguesmatis@example.com">Email</a>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#description" class="tablink active">Description</a></li>
+        <li><a href="#etudes" class="tablink">Études</a></li>
+        <li><a href="#travail" class="tablink">Alternance</a></li>
+        <li><a href="#cv" class="tablink">CV</a></li>
+        <li><a href="#contact" class="tablink">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="description" class="tabcontent active">
+    <h2>Qui suis-je ?</h2>
+    <div class="profile">
+        <img src="path/to/photo.jpg" class="profile-img" alt="Photo">
+        <div>
+            <p>Je suis Rodrigues Matis, étudiant en licence commerciale passionné par le marketing, la stratégie et la relation client. Mon objectif est de développer des compétences solides et professionnelles pour évoluer dans le secteur commercial.</p>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- MENU TABS -->
-    <nav>
-        <ul>
-            <li><a href="#description" class="tablink active">Description</a></li>
-            <li><a href="#etudes" class="tablink">Études</a></li>
-            <li><a href="#travail" class="tablink">Travail</a></li>
-            <li><a href="#cv" class="tablink">CV</a></li>
-            <li><a href="#contact" class="tablink">Contact</a></li>
-        </ul>
-    </nav>
+<section id="etudes" class="tabcontent">
+    <h2>Mes Études</h2>
+    <p>À l’ILEPS, j'étudie la stratégie marketing, la négociation, la gestion commerciale et la communication professionnelle. Les projets et travaux en groupe m’ont permis d’acquérir une vision concrète du commerce moderne.</p>
+</section>
 
-    <!-- CONTENUS -->
+<section id="travail" class="tabcontent">
+    <h2>Mon Alternance</h2>
+    <p>Aux Bains de Seine Mauldre, je participe à la gestion client, à la fidélisation, aux actions marketing et à la communication commerciale. Cette expérience m’apporte une immersion réelle dans le monde professionnel.</p>
+</section>
 
-    <section id="description" class="tabcontent active">
-        <h2>Qui suis-je ?</h2>
-        <div class="profile-info">
-            <img src="path/to/photo.jpg" class="profile-img">
-            <p>
-                Je suis Rodrigues Matis, étudiant en 3e année de Licence Commerciale à l’ILEPS.
-                Passionné par le commerce, la négociation et la stratégie commerciale, je développe
-                mes compétences autant à l'école qu’en alternance.
-            </p>
-        </div>
-    </section>
+<section id="cv" class="tabcontent">
+    <h2>Mon CV</h2>
+    <a href="path/to/cv.pdf" class="btn-cv" download>Télécharger mon CV</a>
+</section>
 
-    <section id="etudes" class="tabcontent">
-        <h2>Mes Études</h2>
-        <p>
-            À l’ILEPS, j’ai appris la stratégie marketing, la relation client, la négociation,
-            ainsi que la gestion de projet. La formation est professionnalisante et orientée terrain.
-        </p>
-    </section>
+<section id="contact" class="tabcontent">
+    <h2>Contact</h2>
+    <p>📩 Email : <a href="mailto:rodriguesmatis@example.com">rodriguesmatis@example.com</a></p>
+    <p>🔗 LinkedIn : <a href="https://www.linkedin.com/in/rodriguesmatis" target="_blank">Voir mon profil</a></p>
+</section>
 
-    <section id="travail" class="tabcontent">
-        <h2>Mon Alternance</h2>
-        <p>
-            Aux Bains de Seine Mauldre, j’assure la gestion client, la communication,
-            la fidélisation et la mise en place de projets commerciaux.
-        </p>
-    </section>
-
-    <section id="cv" class="tabcontent">
-        <h2>Mon CV</h2>
-        <a class="cv-button" href="path/to/cv.pdf" download>Télécharger mon CV</a>
-    </section>
-
-    <section id="contact" class="tabcontent">
-        <h2>Me Contacter</h2>
-        <p>Email direct : <a href="mailto:rodriguesmatis@example.com">rodriguesmatis@example.com</a></p>
-        <p>LinkedIn : <a href="https://www.linkedin.com/in/rodriguesmatis" target="_blank">Profil</a></p>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        © 2025 — Rodrigues Matis | Site personnel
-    </footer>
+<footer>
+    © 2025 — Rodrigues Matis
+</footer>
 
 <script src="script.js"></script>
 </body>
