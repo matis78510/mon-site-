@@ -3,60 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Présentation de [Rodrigues Matis]</title>
-    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+    <title>Présentation de Rodrigues Matis</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Header -->
     <header>
         <div class="logo">
-            <h1>[Rodrigues Matis]</h1>
-            <p>Étudiant en 3ème année de Licence Commerciale</p>
+            <h1>Rodrigues Matis</h1>
+            <p>Étudiant en Licence Commerciale à l'ILEPS | En alternance aux Bains de Seine Mauldre</p>
         </div>
     </header>
 
-    <!-- Section Présentation -->
-    <section id="presentation">
-        <h2>Qui suis-je ?</h2>
-        <p>Bonjour ! Je suis [Rodrigues Matis], étudiant en 3ème année de Licence Commerciale à l'ILEPS, école spécialisée dans le management et le commerce. Actuellement, je suis en alternance au sein des Bains de Seine Mauldre à Aubergenville, où j'ai la chance de travailler dans un environnement dynamique et de mettre en pratique mes connaissances théoriques.</p>
-        <p>Mon parcours m'a permis d'acquérir une solide base en gestion commerciale, marketing, communication et stratégie d'entreprise. Passionné par le commerce et les relations clients, je souhaite approfondir mes compétences dans ces domaines et les appliquer dans le monde professionnel.</p>
-    </section>
-
-    <!-- Section Compétences -->
-    <section id="competences">
-        <h2>Compétences</h2>
+    <!-- Navigation des onglets -->
+    <nav>
         <ul>
-            <li>Gestion de la relation client</li>
-            <li>Stratégies marketing et commerciales</li>
-            <li>Analyse de marché et veille concurrentielle</li>
-            <li>Communication d'entreprise</li>
-            <li>Gestion de projet et négociation</li>
+            <li><a href="#description" class="tablink active">Description</a></li>
+            <li><a href="#etudes" class="tablink">Études</a></li>
+            <li><a href="#travail" class="tablink">Travail</a></li>
         </ul>
-    </section>
+    </nav>
 
-    <!-- Section Expériences -->
-    <section id="experiences">
-        <h2>Expériences professionnelles</h2>
-        <div class="experience">
-            <h3>Alternance - Bains de Seine Mauldre, Aubergenville</h3>
-            <p>Depuis septembre 2023 - Actuellement en poste</p>
-            <p>Dans le cadre de mon alternance, je participe à la gestion des relations clients et à la mise en place de stratégies commerciales pour le développement des activités des Bains de Seine Mauldre. Je suis également impliqué dans la gestion de projets marketing et la promotion des services auprès de la clientèle locale et touristique.</p>
-        </div>
-    </section>
+    <!-- Contenu des onglets -->
+    <div id="description" class="tabcontent active">
+        <h2>Qui suis-je ?</h2>
+        <p>
+            Bonjour, je suis **Rodrigues Matis**, étudiant en 3ème année de Licence Commerciale à l'ILEPS, une école de commerce de renom. 
+            Passionné par le monde de l'économie, du commerce et du marketing, j'ai choisi cette voie pour développer des compétences solides 
+            en gestion, stratégie d'entreprise, et négociation commerciale.
+        </p>
+        <p>
+            Mon parcours universitaire m'a permis d'acquérir des bases solides en marketing stratégique, communication, gestion de la relation 
+            client, et analyse de marché. Ces compétences, je les applique directement dans mon alternance, où je suis immergé dans un 
+            environnement professionnel exigeant. Je cherche à comprendre les réalités du monde de l'entreprise, à travailler en équipe, 
+            et à apprendre à gérer des projets de manière autonome.
+        </p>
+        <p>
+            Ce parcours en alternance me permet de combiner théorie et pratique, un atout majeur pour mon avenir professionnel. 
+            À l'issue de mes études, mon objectif est de travailler dans le secteur du management commercial ou du marketing, 
+            et pourquoi pas, d'entreprendre dans le domaine du conseil en stratégie commerciale.
+        </p>
+    </div>
 
-    <!-- Section Contact -->
-    <section id="contact">
-        <h2>Contactez-moi</h2>
-        <p>Vous pouvez me contacter par email à : <strong>[Ton Email]</strong></p>
-    </section>
+    <div id="etudes" class="tabcontent">
+        <h2>Mes Études</h2>
+        <p>
+            Je suis actuellement en 3ème année de Licence Commerciale à l'ILEPS, une école qui me permet de bénéficier d'une formation 
+            théorique poussée tout en me préparant au monde du travail grâce à une pédagogie pratique. Au programme : stratégie marketing, 
+            gestion de la relation client, études de marché, comptabilité, et bien plus encore.
+        </p>
+        <p>
+            Lors de ma formation, j'ai eu l'opportunité de participer à des projets en groupe où j'ai appris à travailler en équipe, 
+            à analyser des problématiques commerciales réelles et à élaborer des solutions efficaces. J'ai aussi pu enrichir mes 
+            compétences en communication, que ce soit en présentation orale ou en rédaction de rapports professionnels.
+        </p>
+        <p>
+            Les cours sont accompagnés de cas pratiques et de simulations qui me permettent de mettre en application les concepts 
+            théoriques appris en classe. Cette expérience m'apporte une vision très concrète des enjeux commerciaux et me prépare 
+            à relever les défis d'un monde en constante évolution.
+        </p>
+    </div>
+
+    <div id="travail" class="tabcontent">
+        <h2>Mon Travail en Alternance</h2>
+        <p>
+            En parallèle de mes études, j'effectue mon alternance au sein des Bains de Seine Mauldre à Aubergenville, un établissement 
+            de qualité dans le domaine du bien-être et du tourisme. En tant qu'assistant commercial, je participe activement à la gestion 
+            des relations clients, à la mise en place d'actions de fidélisation et à la promotion des services de l'entreprise.
+        </p>
+        <p>
+            Ce travail me permet de développer des compétences précieuses en gestion de la relation client, mais aussi en stratégie 
+            commerciale. J'ai l'opportunité de travailler sur des projets concrets, de participer à des réunions stratégiques et 
+            de contribuer à la mise en place d'actions de communication et de marketing ciblées.
+        </p>
+        <p>
+            Cette alternance est une véritable immersion dans le monde du travail, où je mets en pratique mes connaissances théoriques. 
+            Elle me permet de comprendre la réalité d'une entreprise tout en me formant sur des enjeux commerciaux de terrain.
+        </p>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 [Ton Nom] - Tous droits réservés</p>
+        <p>&copy; 2025 Rodrigues Matis - Tous droits réservés</p>
     </footer>
 
-    <!-- Lien vers le fichier JavaScript -->
-    <script src="script.js"></script> <!-- Le script doit être après le contenu de la page -->
+    <script src="script.js"></script>
 </body>
 </html>
