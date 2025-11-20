@@ -5,16 +5,17 @@
     box-sizing: border-box;
 }
 
+/* Corps du site */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #fff; /* Blanc */
+    color: #333; /* Gris foncé pour le texte */
 }
 
 /* Header */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #F44336; /* Rouge clair */
+    color: white;
     padding: 15px 0;
     text-align: center;
 }
@@ -40,7 +41,11 @@ nav ul li a {
     font-size: 16px;
 }
 
-/* Hero Section */
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section Hero (Carrousel) */
 .hero {
     position: relative;
     width: 100%;
@@ -78,7 +83,7 @@ nav ul li a {
     margin-bottom: 10px;
 }
 
-/* Section des Produits */
+/* Section Produits */
 #produits {
     padding: 40px 0;
     background-color: #fff;
@@ -89,6 +94,7 @@ nav ul li a {
     display: flex;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .produit {
@@ -121,7 +127,7 @@ nav ul li a {
 }
 
 button {
-    background-color: #333;
+    background-color: #F44336; /* Rouge clair */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -131,14 +137,18 @@ button {
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #D32F2F; /* Rouge plus foncé */
 }
 
 /* Section À propos */
 #about {
     padding: 40px 0;
-    background-color: #f2f2f2;
+    background-color: #f7f7f7;
     text-align: center;
+}
+
+#about h2 {
+    color: #F44336; /* Rouge clair */
 }
 
 /* Formulaire de Contact */
@@ -161,19 +171,20 @@ form input, form textarea {
 
 form button {
     padding: 15px;
-    background-color: #333;
+    background-color: #F44336; /* Rouge clair */
     color: white;
     border: none;
     cursor: pointer;
 }
 
+form button:hover {
+    background-color: #D32F2F; /* Rouge plus foncé */
+}
+
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #F44336; /* Rouge clair */
     color: white;
     text-align: center;
     padding: 20px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
