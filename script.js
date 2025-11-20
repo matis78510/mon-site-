@@ -1,37 +1,24 @@
-// Initialisation du carrousel
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const totalSlides = slides.length;
+// Fonction pour faire défiler la page en douceur vers les sections
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-// Fonction pour aller à la slide suivante
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
-}
-
-// Fonction pour aller à la slide précédente
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-}
-
-// Fonction pour mettre à jour le carrousel avec la nouvelle slide
-function updateCarousel() {
-    const newTransformValue = -currentSlide * 100;
-    document.querySelector('.carousel').style.transform = `translateX(${newTransformValue}%)`;
-}
-
-// Lancer le carrousel toutes les 5 secondes (5000ms)
-setInterval(nextSlide, 5000);
-
-// Ajouter des événements aux boutons de navigation
-const nextButton = document.querySelector('.next');
-const prevButton = document.querySelector('.prev');
-
-if (nextButton) {
-    nextButton.addEventListener('click', nextSlide);
-}
-
-if (prevButton) {
-    prevButton.addEventListener('click', prevSlide);
-}
+// Fonction pour ajouter une classe "active" lorsque l'utilisateur fait défiler la page
+window.addEventListener('scroll', function () {
+    const sections = document.querySelectorAll('section');
+    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    
+    sections.forEach(section => {
+        if (section.offsetTop <= scrollPosition + 100 && section.offsetTop + section.offsetHeight > scrollPosition) {
+            section.classList.add('active');
+        } else {
+            section.classList.remove('active');
+        }
+    });
+});
