@@ -10,7 +10,6 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    margin: 0;
 }
 
 /* Header */
@@ -31,97 +30,58 @@ header .logo p {
     margin-top: 10px;
 }
 
-/* Section Présentation */
-#presentation {
-    background-color: #fff;
-    padding: 40px;
-    text-align: center;
+/* Navigation des onglets */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    margin-top: 20px;
+    padding: 10px 0;
 }
 
-#presentation h2 {
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #007BFF;
+}
+
+/* Contenu des onglets */
+.tabcontent {
+    display: none;
+    padding: 40px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+h2 {
     font-size: 28px;
     color: #007BFF;
     margin-bottom: 20px;
 }
 
-#presentation p {
+p {
     font-size: 18px;
     color: #555;
+    line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 20px;
-}
-
-/* Section Compétences */
-#competences {
-    background-color: #f9f9f9;
-    padding: 40px;
-    text-align: center;
-}
-
-#competences h2 {
-    font-size: 28px;
-    color: #007BFF;
-    margin-bottom: 20px;
-}
-
-#competences ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#competences ul li {
-    font-size: 18px;
-    color: #555;
-    margin: 10px 0;
-}
-
-/* Section Expériences */
-#experiences {
-    background-color: #fff;
-    padding: 40px;
-    text-align: center;
-}
-
-#experiences h2 {
-    font-size: 28px;
-    color: #007BFF;
-    margin-bottom: 20px;
-}
-
-.experience {
-    background-color: #f2f2f2;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-.experience h3 {
-    font-size: 24px;
-    color: #007BFF;
-    margin-bottom: 10px;
-}
-
-.experience p {
-    font-size: 18px;
-    color: #555;
-}
-
-/* Section Contact */
-#contact {
-    background-color: #f9f9f9;
-    padding: 40px;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 28px;
-    color: #007BFF;
-    margin-bottom: 20px;
-}
-
-#contact p {
-    font-size: 18px;
-    color: #555;
 }
 
 /* Footer */
