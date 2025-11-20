@@ -5,52 +5,55 @@
     box-sizing: border-box;
 }
 
-/* Corps du site */
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff; /* Blanc */
-    color: #333; /* Gris foncé pour le texte */
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 /* Header */
 header {
     background-color: #F44336; /* Rouge clair */
-    color: white;
-    padding: 15px 0;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
 }
 
 header .logo h1 {
     margin: 0;
+    font-size: 36px;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #FFEBEE;
 }
 
-/* Section Hero (Carrousel) */
+/* Hero Section (Carrousel) */
 .hero {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 450px;
     overflow: hidden;
+    background-color: #333;
 }
 
 .carousel {
@@ -76,6 +79,8 @@ nav ul li a:hover {
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
 
 .carousel-text h2 {
@@ -83,9 +88,13 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-/* Section Produits */
+.carousel-text p {
+    font-size: 18px;
+}
+
+/* Section des Produits */
 #produits {
-    padding: 40px 0;
+    padding: 60px 0;
     background-color: #fff;
     text-align: center;
 }
@@ -95,6 +104,7 @@ nav ul li a:hover {
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .produit {
@@ -104,6 +114,7 @@ nav ul li a:hover {
     width: 300px;
     text-align: center;
     transition: transform 0.3s ease;
+    border-radius: 8px;
 }
 
 .produit:hover {
@@ -112,48 +123,61 @@ nav ul li a:hover {
 
 .produit img {
     width: 100%;
-    height: 300px;
+    height: 250px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .produit-details h3 {
     margin: 15px 0;
     font-size: 20px;
+    font-weight: 600;
 }
 
 .produit-details p {
     font-size: 18px;
-    color: #333;
+    color: #555;
 }
 
 button {
-    background-color: #F44336; /* Rouge clair */
+    background-color: #F44336;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #D32F2F; /* Rouge plus foncé */
+    background-color: #D32F2F;
 }
 
 /* Section À propos */
 #about {
-    padding: 40px 0;
-    background-color: #f7f7f7;
+    padding: 60px 0;
+    background-color: #f2f2f2;
     text-align: center;
 }
 
 #about h2 {
-    color: #F44336; /* Rouge clair */
+    color: #F44336;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Formulaire de Contact */
 #contact {
-    padding: 40px 0;
+    padding: 60px 0;
+    background-color: #fff;
 }
 
 form {
@@ -161,30 +185,45 @@ form {
     flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 form input, form textarea {
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 form button {
     padding: 15px;
-    background-color: #F44336; /* Rouge clair */
+    background-color: #F44336;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
 }
 
 form button:hover {
-    background-color: #D32F2F; /* Rouge plus foncé */
+    background-color: #D32F2F;
 }
 
 /* Footer */
 footer {
-    background-color: #F44336; /* Rouge clair */
+    background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 14px;
 }
