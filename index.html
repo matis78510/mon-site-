@@ -3,62 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site de Chaussures</title>
+    <title>Chaussures - Courir / Foot Locker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>Bienvenue sur notre site de Chaussures</h1>
+        <div class="logo">
+            <h1>Chaussures</h1>
+        </div>
         <nav>
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#produits">Nos produits</a></li>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Nos Produits</a></li>
+                <li><a href="#about">À propos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <h2>Nos chaussures vous attendent !</h2>
-        <p>Découvrez notre collection de chaussures tendance et confortables.</p>
+    <!-- Hero Section (Carrousel) -->
+    <section class="hero" id="accueil">
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/1200x400" alt="Chaussure sportive 1">
+                <div class="carousel-text">
+                    <h2>Les dernières chaussures sportives</h2>
+                    <p>Le confort et la performance à chaque pas !</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/1200x400" alt="Chaussure de ville 2">
+                <div class="carousel-text">
+                    <h2>Chic et Confort</h2>
+                    <p>Des modèles tendance pour toutes les occasions.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Produits Section -->
     <section id="produits">
-        <h2>Nos Chaussures</h2>
-        <div class="produit">
-            <img src="https://via.placeholder.com/150" alt="Chaussure 1">
-            <p>Chaussure Sportive</p>
-            <button>Ajouter au panier</button>
-        </div>
-        <div class="produit">
-            <img src="https://via.placeholder.com/150" alt="Chaussure 2">
-            <p>Chaussure Casual</p>
-            <button>Ajouter au panier</button>
-        </div>
-        <div class="produit">
-            <img src="https://via.placeholder.com/150" alt="Chaussure 3">
-            <p>Chaussure de ville</p>
-            <button>Ajouter au panier</button>
+        <h2>Nos Produits</h2>
+        <div class="produit-container">
+            <!-- Produit 1 -->
+            <div class="produit">
+                <img src="https://via.placeholder.com/300x300" alt="Produit 1">
+                <div class="produit-details">
+                    <h3>Chaussure Sportive</h3>
+                    <p>€99.99</p>
+                    <button>Ajouter au panier</button>
+                </div>
+            </div>
+            <!-- Produit 2 -->
+            <div class="produit">
+                <img src="https://via.placeholder.com/300x300" alt="Produit 2">
+                <div class="produit-details">
+                    <h3>Chaussure Casual</h3>
+                    <p>€89.99</p>
+                    <button>Ajouter au panier</button>
+                </div>
+            </div>
+            <!-- Produit 3 -->
+            <div class="produit">
+                <img src="https://via.placeholder.com/300x300" alt="Produit 3">
+                <div class="produit-details">
+                    <h3>Chaussure de Ville</h3>
+                    <p>€129.99</p>
+                    <button>Ajouter au panier</button>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about">
+        <h2>À propos</h2>
+        <p>Nous offrons les meilleures chaussures pour tous vos besoins. Du sport à la mode, en passant par le confort quotidien, nous avons ce qu'il vous faut !</p>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contactez-nous</h2>
         <form>
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom" required>
-            
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
-            
-            <textarea name="message" id="message" placeholder="Votre message" required></textarea>
-            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
             <button type="submit">Envoyer</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2025 Site de Chaussures. Tous droits réservés.</p>
+        <p>&copy; 2025 Chaussures - Tous droits réservés</p>
     </footer>
 
     <script src="script.js"></script>
