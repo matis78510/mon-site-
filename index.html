@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rodrigues Matis — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- HEADER / HERO -->
-  <header class="site-header" id="top">
+  <!-- NAVIGATION -->
+  <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
         <h1>Rodrigues Matis</h1>
         <p class="subtitle">Étudiant en Licence Commerciale • Alternance aux Bains de Seine Mauldre</p>
       </div>
 
-      <nav class="main-nav" aria-label="Navigation principale">
+      <nav class="main-nav">
         <ul>
-          <li><a href="#etudes" class="nav-link active">Études</a></li>
-          <li><a href="#travail" class="nav-link">Travail</a></li>
+          <li><a href="#hero" class="nav-link active">Accueil</a></li>
+          <li><a href="#etudes" class="nav-link">Études</a></li>
+          <li><a href="#travail" class="nav-link">Alternance</a></li>
           <li><a href="#quisuisje" class="nav-link">Qui suis-je ?</a></li>
           <li><a href="#cv" class="nav-link">CV</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -28,25 +30,43 @@
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="container">
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="hero-tag">Portfolio 2025</p>
+        <h2>Commercial, curieux, orienté résultats.</h2>
+        <p class="hero-desc">
+          Étudiant en Licence Commerciale à l’ILEPS, en alternance aux Bains de Seine Mauldre.
+        </p>
 
-    <!-- ETUDES -->
-    <section id="etudes" class="panel active">
+        <div class="hero-actions">
+          <a href="https://files.catbox.moe/2uq4or.pdf" class="btn-primary" target="_blank">📄 Voir mon CV</a>
+          <a href="https://www.linkedin.com/in/matis-rodrigues-46b703295/" class="btn-ghost" target="_blank">🔗 Mon LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <!-- TA PHOTO -->
+        <img src="https://files.catbox.moe/2q0dui.jpg" alt="Matis Rodrigues" class="hero-photo">
+        <div class="hero-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container main-layout">
+
+    <!-- ÉTUDES -->
+    <section id="etudes" class="panel">
       <div class="panel-grid">
         <div class="panel-text">
-          <h2>Études</h2>
-          <p>
-            Je suis actuellement en Licence Commerciale à l'ILEPS Cergy. J'y suis formé en stratégie marketing,
-            gestion de la relation client, négociation et gestion de projet.
-          </p>
-          <p>
-            <a class="link-btn" href="https://ileps.fr" target="_blank" rel="noopener">Aller sur le site de l'ILEPS</a>
-          </p>
+          <h2>Études – ILEPS Cergy</h2>
+          <p>Je suis actuellement en Licence Commerciale à l’ILEPS...</p>
+          <a class="link-btn" href="https://ileps.fr" target="_blank">Découvrir l’ILEPS</a>
         </div>
+
         <div class="panel-media">
-          <!-- Remplace ileps.jpg par ta photo de l'école -->
-          <img src="ileps.jpg" alt="Façade / campus ILEPS Cergy" class="panel-image">
+          <img src="https://files.catbox.moe/5skn5m.jpg" alt="ILEPS Cergy" class="panel-image">
         </div>
       </div>
     </section>
@@ -55,18 +75,13 @@
     <section id="travail" class="panel">
       <div class="panel-grid reverse">
         <div class="panel-media">
-          <!-- Remplace bains.jpg par ta photo de l'établissement -->
-          <img src="bains.jpg" alt="Les Bains de Seine Mauldre" class="panel-image">
+          <img src="https://files.catbox.moe/fv3h9o.jpg" alt="Bains de Seine Mauldre" class="panel-image">
         </div>
+
         <div class="panel-text">
-          <h2>Travail — Alternance</h2>
-          <p>
-            En alternance aux <strong>Les Bains de Seine Mauldre</strong> (Aubergenville), j'interviens en tant qu'assistant commercial :
-            gestion clients, fidélisation, supports de communication et projets marketing.
-          </p>
-          <p>
-            <a class="link-btn" href="https://lesbainsdeseinemauldre.fr" target="_blank" rel="noopener">Découvrir l'établissement</a>
-          </p>
+          <h2>Alternance – Bains de Seine Mauldre</h2>
+          <p>Je suis en alternance en tant qu’assistant commercial...</p>
+          <a class="link-btn" href="https://lesbainsdeseinemauldre.fr" target="_blank">Site officiel</a>
         </div>
       </div>
     </section>
@@ -74,57 +89,39 @@
     <!-- QUI SUIS-JE -->
     <section id="quisuisje" class="panel">
       <div class="profile-card">
-        <img src="photo-matis.jpg" alt="Photo Rodrigues Matis" class="profile-photo">
+        <img src="https://files.catbox.moe/2q0dui.jpg" alt="Rodrigues Matis" class="profile-photo">
         <div class="profile-info">
           <h2>Qui suis-je ?</h2>
-          <p>
-            Je m'appelle <strong>Rodrigues Matis</strong>. Étudiant motivé, orienté résultats, curieux du marketing et de la relation client.
-            J'aime les projets concrets, le travail en équipe et apprendre sur le terrain.
-          </p>
-
+          <p>Je suis Rodrigues Matis, étudiant motivé...</p>
           <ul class="quick-links">
-            <li><a href="cv.pdf" download>📄 Télécharger mon CV</a></li>
-            <li><a href="https://www.linkedin.com/in/rodriguesmatis" target="_blank" rel="noopener">🔗 LinkedIn</a></li>
-            <li><a href="mailto:rodriguesmatis@example.com">✉️ rodriguesmatis@example.com</a></li>
+            <li><a href="https://files.catbox.moe/2uq4or.pdf" target="_blank">📄 Télécharger mon CV</a></li>
+            <li><a href="https://www.linkedin.com/in/matis-rodrigues-46b703295/" target="_blank">🔗 LinkedIn</a></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- CV SIMPLE -->
+    <!-- CV -->
     <section id="cv" class="panel">
-      <h2>CV</h2>
-      <p>Télécharge mon CV pour voir en détail mon expérience, mes compétences et mes missions en alternance.</p>
-      <a class="cta" href="cv.pdf" download>Télécharger le CV</a>
+      <h2>Mon CV</h2>
+      <a class="cta" href="https://files.catbox.moe/2uq4or.pdf" target="_blank">Ouvrir mon CV</a>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="panel">
       <h2>Contact</h2>
-      <p>Tu peux me contacter par email ou via LinkedIn — je réponds rapidement.</p>
-
-      <form id="contact-form" class="contact-form" action="mailto:rodriguesmatis@example.com" method="post" enctype="text/plain">
-        <label for="name">Nom</label>
-        <input id="name" name="name" type="text" required>
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
+      <form class="contact-form" action="mailto:matis.rodrigues@ileps.fr" method="post">
+        <input type="text" name="name" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Message" required></textarea>
         <button type="submit" class="btn-primary">Envoyer</button>
       </form>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2025 Rodrigues Matis — Site personnel</p>
-      <p><a href="#top" class="small-link">Retour en haut</a></p>
-    </div>
+    <p>© 2025 Rodrigues Matis – Portfolio</p>
   </footer>
 
   <script src="script.js"></script>
