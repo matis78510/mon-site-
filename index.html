@@ -1,201 +1,145 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rodrigues Matis — Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-  <!-- HEADER / NAV -->
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <div class="brand">
-        <h1>Rodrigues Matis</h1>
-        <p class="subtitle">
-          Étudiant en Licence Commerciale • Alternance aux Bains de Seine Mauldre
-        </p>
-      </div>
-
-      <nav class="main-nav" aria-label="Navigation principale">
-        <ul>
-          <li><a href="#etudes" class="nav-link active">Études</a></li>
-          <li><a href="#travail" class="nav-link">Alternance</a></li>
-          <li><a href="#quisuisje" class="nav-link">Qui suis-je ?</a></li>
-          <li><a href="#cv" class="nav-link">CV</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO / ACCUEIL (pas dans la nav, juste visuel) -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <p class="hero-tag">Portfolio 2025</p>
-        <h2>Commercial, curieux, orienté résultats.</h2>
-        <p class="hero-desc">
-          Étudiant en Licence Commerciale à l’ILEPS, en alternance aux Bains de Seine Mauldre.
-          Je combine marketing, relation client et projets terrain pour créer de la valeur.
-        </p>
-
-        <div class="hero-actions">
-          <!-- CV -->
-          <a href="cv.pdf" class="btn-primary" target="_blank" rel="noopener">
-            📄 Voir mon CV
-          </a>
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/matis-rodrigues-46b703295/"
-             class="btn-ghost" target="_blank" rel="noopener">
-            🔗 Mon LinkedIn
-          </a>
-        </div>
-
-        <div class="hero-links">
-          <a href="mailto:matis.rodrigues@ileps.fr">matis.rodrigues@ileps.fr</a>
-        </div>
-      </div>
-
-      <div class="hero-photo-wrap">
-        <!-- TA PHOTO PRINCIPALE -->
-        <!-- Fichier: images/matis.jpg -->
-        <img src="images/matis.jpg" alt="Photo Rodrigues Matis" class="hero-photo" />
-        <div class="hero-glow"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTENU PRINCIPAL (ton script.js regarde les sections ici) -->
-  <main class="container main-layout">
-
-    <!-- ÉTUDES -->
-    <section id="etudes" class="panel">
-      <div class="panel-grid">
-        <div class="panel-text">
-          <h2>Études — ILEPS Cergy</h2>
-          <p>
-            Je suis actuellement en <strong>Licence Commerciale à l'ILEPS</strong>. La formation
-            me permet de développer des compétences en stratégie marketing, gestion de la
-            relation client, négociation, gestion de projet et communication professionnelle.
-          </p>
-          <p>
-            Grâce aux cas concrets et aux travaux de groupe, j’apprends à analyser un marché,
-            construire une offre et piloter des actions commerciales performantes.
-          </p>
-          <p>
-            <a class="link-btn" href="https://ileps.fr" target="_blank" rel="noopener">
-              Découvrir l’ILEPS
-            </a>
-          </p>
-        </div>
-
-        <div class="panel-media">
-          <!-- PHOTO ÉCOLE -->
-          <!-- Fichier: images/ileps.jpg -->
-          <img src="images/ileps.jpg" alt="Bâtiment ILEPS Cergy" class="panel-image" />
-        </div>
-      </div>
-    </section>
-
-    <!-- TRAVAIL / ALTERNANCE -->
-    <section id="travail" class="panel">
-      <div class="panel-grid reverse">
-        <div class="panel-media">
-          <!-- PHOTO ENTREPRISE -->
-          <!-- Fichier: images/bains.jpg -->
-          <img src="images/bains.jpg" alt="Centre aquatique Les Bains de Seine Mauldre" class="panel-image" />
-        </div>
-
-        <div class="panel-text">
-          <h2>Alternance — Bains de Seine Mauldre</h2>
-          <p>
-            En alternance aux <strong>Bains de Seine Mauldre (Aubergenville)</strong>, j’occupe un
-            poste d’assistant commercial. Je participe à la gestion et à la fidélisation des clients,
-            à la mise en place d’actions marketing et à la création de supports de communication.
-          </p>
-          <p>
-            Cette expérience m’apporte une vision terrain très concrète : coordination avec les
-            équipes, relation directe avec les usagers, suivi d’indicateurs et amélioration continue
-            de l’expérience client.
-          </p>
-          <p>
-            <a class="link-btn" href="https://lesbainsdeseinemauldre.fr" target="_blank" rel="noopener">
-              Site des Bains de Seine Mauldre
-            </a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUI SUIS-JE -->
-    <section id="quisuisje" class="panel">
-      <div class="profile-card">
-        <!-- TA PHOTO EN ROND -->
-        <!-- Fichier: images/matis.jpg -->
-        <img src="images/matis.jpg" alt="Rodrigues Matis" class="profile-photo" />
-
-        <div class="profile-info">
-          <h2>Qui suis-je ?</h2>
-          <p>
-            Je m’appelle <strong>Rodrigues Matis</strong>. Motivé, sérieux et orienté résultats,
-            j’aime comprendre les besoins des clients et trouver des solutions concrètes pour y répondre.
-          </p>
-          <p>
-            Je m’intéresse particulièrement au <strong>marketing digital</strong>, à la
-            <strong>relation client</strong> et aux expériences de services (sport, loisirs, bien-être).
-          </p>
-          <ul class="quick-links">
-            <li><a href="cv.pdf" target="_blank" rel="noopener">📄 Voir mon CV</a></li>
-            <li><a href="https://www.linkedin.com/in/matis-rodrigues-46b703295/"
-                   target="_blank" rel="noopener">🔗 Mon LinkedIn</a></li>
-            <li><a href="mailto:matis.rodrigues@ileps.fr">✉️ Me contacter par mail</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CV -->
-    <section id="cv" class="panel">
-      <h2>Mon CV</h2>
-      <p>Tu peux consulter mon CV complet en cliquant sur le bouton ci-dessous.</p>
-      <a class="cta" href="cv.pdf" target="_blank" rel="noopener">Ouvrir le CV</a>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="panel">
-      <h2>Contact</h2>
-      <p>Tu peux me contacter par email via le formulaire ou directement sur LinkedIn.</p>
-
-      <form id="contact-form" class="contact-form"
-            action="mailto:matis.rodrigues@ileps.fr"
-            method="post" enctype="text/plain">
-        <label for="name">Nom</label>
-        <input id="name" name="name" type="text" required />
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="btn-primary">Envoyer</button>
-      </form>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2025 Rodrigues Matis — Portfolio</p>
-      <p><a href="#top" class="small-link">Retour en haut</a></p>
-    </div>
-  </footer>
-
-  <!-- TON SCRIPT (inchangé) -->
-  <script src="script.js"></script>
-</body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+index b8160c159bb924aca053e87cb67840f856161d3d..1ba26ee063b49a3a032ccee1267122a1c190ea12 100644
+--- a/index.html
++++ b/index.html
+@@ -1,36 +1,39 @@
+ <!DOCTYPE html>
+ <html lang="fr">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <meta name="description" content="Portfolio de Rodrigues Matis, étudiant en Licence Commerciale et alternant aux Bains de Seine Mauldre." />
+   <title>Rodrigues Matis — Portfolio</title>
+   <link rel="stylesheet" href="style.css" />
+ </head>
+ 
+ <body>
+ 
++  <a href="#main-content" class="skip-link">Passer au contenu principal</a>
++
+   <!-- HEADER / NAV -->
+   <header class="site-header" id="top">
+     <div class="container header-inner">
+       <div class="brand">
+         <h1>Rodrigues Matis</h1>
+         <p class="subtitle">
+           Étudiant en Licence Commerciale • Alternance aux Bains de Seine Mauldre
+         </p>
+       </div>
+ 
+       <nav class="main-nav" aria-label="Navigation principale">
+         <ul>
+           <li><a href="#etudes" class="nav-link active">Études</a></li>
+           <li><a href="#travail" class="nav-link">Alternance</a></li>
+           <li><a href="#quisuisje" class="nav-link">Qui suis-je ?</a></li>
+           <li><a href="#cv" class="nav-link">CV</a></li>
+           <li><a href="#contact" class="nav-link">Contact</a></li>
+         </ul>
+       </nav>
+     </div>
+   </header>
+ 
+   <!-- HERO / ACCUEIL (pas dans la nav, juste visuel) -->
+   <section class="hero">
+     <div class="container hero-inner">
+@@ -47,51 +50,51 @@
+           <a href="cv.pdf" class="btn-primary" target="_blank" rel="noopener">
+             📄 Voir mon CV
+           </a>
+           <!-- LinkedIn -->
+           <a href="https://www.linkedin.com/in/matis-rodrigues-46b703295/"
+              class="btn-ghost" target="_blank" rel="noopener">
+             🔗 Mon LinkedIn
+           </a>
+         </div>
+ 
+         <div class="hero-links">
+           <a href="mailto:matis.rodrigues@ileps.fr">matis.rodrigues@ileps.fr</a>
+         </div>
+       </div>
+ 
+       <div class="hero-photo-wrap">
+         <!-- TA PHOTO PRINCIPALE -->
+         <!-- Fichier: images/matis.jpg -->
+         <img src="images/matis.jpg" alt="Photo Rodrigues Matis" class="hero-photo" />
+         <div class="hero-glow"></div>
+       </div>
+     </div>
+   </section>
+ 
+   <!-- CONTENU PRINCIPAL (ton script.js regarde les sections ici) -->
+-  <main class="container main-layout">
++  <main class="container main-layout" id="main-content">
+ 
+     <!-- ÉTUDES -->
+     <section id="etudes" class="panel">
+       <div class="panel-grid">
+         <div class="panel-text">
+           <h2>Études — ILEPS Cergy</h2>
+           <p>
+             Je suis actuellement en <strong>Licence Commerciale à l'ILEPS</strong>. La formation
+             me permet de développer des compétences en stratégie marketing, gestion de la
+             relation client, négociation, gestion de projet et communication professionnelle.
+           </p>
+           <p>
+             Grâce aux cas concrets et aux travaux de groupe, j’apprends à analyser un marché,
+             construire une offre et piloter des actions commerciales performantes.
+           </p>
+           <p>
+             <a class="link-btn" href="https://ileps.fr" target="_blank" rel="noopener">
+               Découvrir l’ILEPS
+             </a>
+           </p>
+         </div>
+ 
+         <div class="panel-media">
+           <!-- PHOTO ÉCOLE -->
+           <!-- Fichier: images/ileps.jpg -->
+@@ -161,41 +164,43 @@
+     <section id="cv" class="panel">
+       <h2>Mon CV</h2>
+       <p>Tu peux consulter mon CV complet en cliquant sur le bouton ci-dessous.</p>
+       <a class="cta" href="cv.pdf" target="_blank" rel="noopener">Ouvrir le CV</a>
+     </section>
+ 
+     <!-- CONTACT -->
+     <section id="contact" class="panel">
+       <h2>Contact</h2>
+       <p>Tu peux me contacter par email via le formulaire ou directement sur LinkedIn.</p>
+ 
+       <form id="contact-form" class="contact-form"
+             action="mailto:matis.rodrigues@ileps.fr"
+             method="post" enctype="text/plain">
+         <label for="name">Nom</label>
+         <input id="name" name="name" type="text" required />
+ 
+         <label for="email">Email</label>
+         <input id="email" name="email" type="email" required />
+ 
+         <label for="message">Message</label>
+         <textarea id="message" name="message" rows="5" required></textarea>
+ 
+         <button type="submit" class="btn-primary">Envoyer</button>
+       </form>
++
++      <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+     </section>
+ 
+   </main>
+ 
+   <!-- FOOTER -->
+   <footer class="site-footer">
+     <div class="container footer-inner">
+       <p>© 2025 Rodrigues Matis — Portfolio</p>
+       <p><a href="#top" class="small-link">Retour en haut</a></p>
+     </div>
+   </footer>
+ 
+   <!-- TON SCRIPT (inchangé) -->
+   <script src="script.js"></script>
+ </body>
+ </html>
+ 
+EOF
+)
