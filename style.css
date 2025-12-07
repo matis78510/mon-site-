@@ -18,7 +18,7 @@ body {
     line-height: 1.6;
 }
 
-/* --------- VARIABLES (bleu & blanc) --------- */
+/* --------- VARIABLES --------- */
 :root {
     --blue: #2563eb;
     --blue-dark: #1d4ed8;
@@ -60,7 +60,7 @@ body {
     gap: 1rem;
 }
 
-/* bouton "Mon CV" en pill bleu */
+/* Bouton "Mon CV" */
 .cv-link-header {
     padding: 0.4rem 1.1rem;
     border-radius: 999px;
@@ -401,10 +401,6 @@ body {
 
     .header-left {
         gap: 0.6rem;
-    }
-
-    .cv-link-header {
-        display: none; /* si tu veux l’enlever sur mobile sinon commente cette ligne */
     }
 }
 
