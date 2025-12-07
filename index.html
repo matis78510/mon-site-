@@ -1,145 +1,240 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-index b8160c159bb924aca053e87cb67840f856161d3d..1ba26ee063b49a3a032ccee1267122a1c190ea12 100644
---- a/index.html
-+++ b/index.html
-@@ -1,36 +1,39 @@
- <!DOCTYPE html>
- <html lang="fr">
- <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-+  <meta name="description" content="Portfolio de Rodrigues Matis, étudiant en Licence Commerciale et alternant aux Bains de Seine Mauldre." />
-   <title>Rodrigues Matis — Portfolio</title>
-   <link rel="stylesheet" href="style.css" />
- </head>
- 
- <body>
- 
-+  <a href="#main-content" class="skip-link">Passer au contenu principal</a>
-+
-   <!-- HEADER / NAV -->
-   <header class="site-header" id="top">
-     <div class="container header-inner">
-       <div class="brand">
-         <h1>Rodrigues Matis</h1>
-         <p class="subtitle">
-           Étudiant en Licence Commerciale • Alternance aux Bains de Seine Mauldre
-         </p>
-       </div>
- 
-       <nav class="main-nav" aria-label="Navigation principale">
-         <ul>
-           <li><a href="#etudes" class="nav-link active">Études</a></li>
-           <li><a href="#travail" class="nav-link">Alternance</a></li>
-           <li><a href="#quisuisje" class="nav-link">Qui suis-je ?</a></li>
-           <li><a href="#cv" class="nav-link">CV</a></li>
-           <li><a href="#contact" class="nav-link">Contact</a></li>
-         </ul>
-       </nav>
-     </div>
-   </header>
- 
-   <!-- HERO / ACCUEIL (pas dans la nav, juste visuel) -->
-   <section class="hero">
-     <div class="container hero-inner">
-@@ -47,51 +50,51 @@
-           <a href="cv.pdf" class="btn-primary" target="_blank" rel="noopener">
-             📄 Voir mon CV
-           </a>
-           <!-- LinkedIn -->
-           <a href="https://www.linkedin.com/in/matis-rodrigues-46b703295/"
-              class="btn-ghost" target="_blank" rel="noopener">
-             🔗 Mon LinkedIn
-           </a>
-         </div>
- 
-         <div class="hero-links">
-           <a href="mailto:matis.rodrigues@ileps.fr">matis.rodrigues@ileps.fr</a>
-         </div>
-       </div>
- 
-       <div class="hero-photo-wrap">
-         <!-- TA PHOTO PRINCIPALE -->
-         <!-- Fichier: images/matis.jpg -->
-         <img src="images/matis.jpg" alt="Photo Rodrigues Matis" class="hero-photo" />
-         <div class="hero-glow"></div>
-       </div>
-     </div>
-   </section>
- 
-   <!-- CONTENU PRINCIPAL (ton script.js regarde les sections ici) -->
--  <main class="container main-layout">
-+  <main class="container main-layout" id="main-content">
- 
-     <!-- ÉTUDES -->
-     <section id="etudes" class="panel">
-       <div class="panel-grid">
-         <div class="panel-text">
-           <h2>Études — ILEPS Cergy</h2>
-           <p>
-             Je suis actuellement en <strong>Licence Commerciale à l'ILEPS</strong>. La formation
-             me permet de développer des compétences en stratégie marketing, gestion de la
-             relation client, négociation, gestion de projet et communication professionnelle.
-           </p>
-           <p>
-             Grâce aux cas concrets et aux travaux de groupe, j’apprends à analyser un marché,
-             construire une offre et piloter des actions commerciales performantes.
-           </p>
-           <p>
-             <a class="link-btn" href="https://ileps.fr" target="_blank" rel="noopener">
-               Découvrir l’ILEPS
-             </a>
-           </p>
-         </div>
- 
-         <div class="panel-media">
-           <!-- PHOTO ÉCOLE -->
-           <!-- Fichier: images/ileps.jpg -->
-@@ -161,41 +164,43 @@
-     <section id="cv" class="panel">
-       <h2>Mon CV</h2>
-       <p>Tu peux consulter mon CV complet en cliquant sur le bouton ci-dessous.</p>
-       <a class="cta" href="cv.pdf" target="_blank" rel="noopener">Ouvrir le CV</a>
-     </section>
- 
-     <!-- CONTACT -->
-     <section id="contact" class="panel">
-       <h2>Contact</h2>
-       <p>Tu peux me contacter par email via le formulaire ou directement sur LinkedIn.</p>
- 
-       <form id="contact-form" class="contact-form"
-             action="mailto:matis.rodrigues@ileps.fr"
-             method="post" enctype="text/plain">
-         <label for="name">Nom</label>
-         <input id="name" name="name" type="text" required />
- 
-         <label for="email">Email</label>
-         <input id="email" name="email" type="email" required />
- 
-         <label for="message">Message</label>
-         <textarea id="message" name="message" rows="5" required></textarea>
- 
-         <button type="submit" class="btn-primary">Envoyer</button>
-       </form>
-+
-+      <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
-     </section>
- 
-   </main>
- 
-   <!-- FOOTER -->
-   <footer class="site-footer">
-     <div class="container footer-inner">
-       <p>© 2025 Rodrigues Matis — Portfolio</p>
-       <p><a href="#top" class="small-link">Retour en haut</a></p>
-     </div>
-   </footer>
- 
-   <!-- TON SCRIPT (inchangé) -->
-   <script src="script.js"></script>
- </body>
- </html>
- 
-EOF
-)
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodrigues Matis - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-mark">RM</span>
+                <span class="logo-text">Rodrigues&nbsp;Matis</span>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="#qui-suis-je" class="nav-link active">Qui suis-je ?</a></li>
+                    <li><a href="#etudes" class="nav-link">Études</a></li>
+                    <li><a href="#travail" class="nav-link">Travail</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Burger menu pour mobile -->
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- SECTION HERO -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="hero-tag">Étudiant en STAPS & expérience en événementiel</p>
+                <h1>Salut, moi c'est <span class="accent">Matis Rodrigues</span></h1>
+                <p class="hero-subtitle">
+                    Étudiant dynamique, passionné par le sport, l'événementiel et l'expérience client.
+                    Entre études à l’ILEPS et missions aux Bains de Seine Mauldre, je développe des
+                    compétences à la fois humaines et professionnelles.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#etudes" class="btn btn-primary">Voir mes études</a>
+                    <a href="#travail" class="btn btn-outline">Mes expériences pro</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <!-- Mets ici ta photo à la place du placeholder -->
+                <!-- Remplace src="images/matis.jpg" par le bon chemin -->
+                <div class="hero-photo">
+                    <img src="images/matis.jpg" alt="Photo de Rodrigues Matis">
+                </div>
+                <div class="hero-info">
+                    <p><strong>Ville :</strong> Cergy (FR)</p>
+                    <p><strong>Études :</strong> Licence STAPS</p>
+                    <p><strong>Poste actuel :</strong> Employé polyvalent / accueil & événementiel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION QUI SUIS-JE -->
+    <section id="qui-suis-je" class="section">
+        <div class="container">
+            <h2 class="section-title">Qui suis-je ?</h2>
+            <p class="section-intro">
+                Je suis un étudiant sérieux, impliqué et à l’écoute, qui aime le contact humain,
+                le travail en équipe et les environnements dynamiques. J’aime lier 
+                <strong>sport</strong>, <strong>bien-être</strong> et <strong>relation client</strong>.
+            </p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Qualités</h3>
+                    <ul class="list">
+                        <li>Esprit d’équipe et bonne communication</li>
+                        <li>Adaptabilité (événementiel, accueil, vente)</li>
+                        <li>Sérieux, ponctualité et fiabilité</li>
+                        <li>À l’aise avec le contact client</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Ce que je recherche</h3>
+                    <p>
+                        Continuer à développer mes compétences dans des structures liées
+                        au sport, au bien-être ou aux loisirs, tout en gagnant en 
+                        responsabilité et en autonomie sur le terrain.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ÉTUDES -->
+    <section id="etudes" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Études</h2>
+            <p class="section-intro">
+                Je poursuis mes études à l’ILEPS, une école spécialisée dans le sport, 
+                l’éducation et la motricité humaine.
+            </p>
+
+            <div class="grid-2">
+                <div class="card card-school">
+                    <h3>ILEPS – Cergy</h3>
+                    <p>
+                        Formation orientée sport, pédagogie et gestion de projet. 
+                        Elle me permet de développer des compétences autant pratiques 
+                        que théoriques.
+                    </p>
+                    <ul class="list">
+                        <li>Projet professionnel lié au sport / encadrement</li>
+                        <li>Travail en groupe & gestion d’événements</li>
+                        <li>Approche scientifique du sport</li>
+                    </ul>
+
+                    <!-- Lien vers le site ILEPS -->
+                    <a 
+                        href="https://www.ileps.fr" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="btn btn-primary btn-sm"
+                    >
+                        Découvrir l’ILEPS
+                    </a>
+                </div>
+
+                <div class="card card-photo">
+                    <!-- Mets ici une photo de l’ILEPS -->
+                    <div class="image-wrapper">
+                        <img src="images/ileps.jpg" alt="Bâtiment de l’ILEPS à Cergy">
+                    </div>
+                    <p class="img-caption">Campus de l’ILEPS à Cergy (photo à personnaliser).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TRAVAIL -->
+    <section id="travail" class="section">
+        <div class="container">
+            <h2 class="section-title">Travail & expériences</h2>
+            <p class="section-intro">
+                J’ai eu l’opportunité de travailler aux Bains de Seine Mauldre, 
+                une structure axée sur le bien-être, la détente et l’expérience client.
+            </p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Les Bains de Seine Mauldre</h3>
+                    <p>
+                        Missions réalisées :
+                    </p>
+                    <ul class="list">
+                        <li>Accueil des clients et accompagnement</li>
+                        <li>Gestion des réservations et encaissements</li>
+                        <li>Vente de prestations et conseils</li>
+                        <li>Participation à l’organisation d’événements</li>
+                        <li>Communication et image de la structure</li>
+                    </ul>
+                    <!-- Mets l’URL officielle ici si tu veux -->
+                    <a 
+                        href="#" 
+                        class="btn btn-outline btn-sm"
+                    >
+                        (Ajouter un lien vers le site des Bains)
+                    </a>
+                </div>
+
+                <div class="card card-photo">
+                    <!-- Mets ici une photo des Bains de Seine Mauldre -->
+                    <div class="image-wrapper">
+                        <img src="images/les-bains.jpg" alt="Les Bains de Seine Mauldre">
+                    </div>
+                    <p class="img-caption">Les Bains de Seine Mauldre (photo à personnaliser).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-intro">
+                Tu peux me contacter facilement pour un projet, un job étudiant, un stage ou une collaboration.
+            </p>
+
+            <div class="grid-2 contact-grid">
+                <div class="card">
+                    <h3>Mes infos</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <span class="contact-label">Email :</span>
+                            <a href="mailto:exemple@mail.com">exemple@mail.com</a>
+                            <!-- Remplace par ton vrai mail -->
+                        </li>
+                        <li>
+                            <span class="contact-label">LinkedIn :</span>
+                            <a 
+                                href="https://www.linkedin.com/in/matis-rodrigues-46b703295/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Profil LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Pourquoi me contacter ?</h3>
+                    <ul class="list">
+                        <li>Job étudiant / renfort en accueil ou événementiel</li>
+                        <li>Stages en lien avec le sport ou le bien-être</li>
+                        <li>Projets nécessitant une personne sérieuse et motivée</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© <span id="year"></span> Rodrigues Matis - Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
