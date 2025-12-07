@@ -40,9 +40,10 @@ body {
     position: sticky;
     top: 0;
     z-index: 50;
-    backdrop-filter: blur(12px);
-    background: linear-gradient(90deg, #1d4ed8, #3b82f6); /* bleu */
+    backdrop-filter: blur(14px);
+    background: linear-gradient(90deg, #1d4ed8, #2563eb, #3b82f6);
     color: var(--white);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
 }
 
 .header-content {
@@ -52,31 +53,30 @@ body {
     padding: 0.9rem 0;
 }
 
-/* partie gauche : logo + bouton CV */
+/* Gauche : logo + bouton CV */
 .header-left {
     display: flex;
     align-items: center;
-    gap: 0.9rem;
+    gap: 1rem;
 }
 
-/* bouton "Mon CV" dans la barre bleue */
+/* bouton "Mon CV" en pill bleu */
 .cv-link-header {
-    padding: 0.35rem 0.9rem;
+    padding: 0.4rem 1.1rem;
     border-radius: 999px;
-    border: 1px solid rgba(239, 246, 255, 0.8);
+    border: 1px solid rgba(219, 234, 254, 0.8);
     font-size: 0.85rem;
     text-decoration: none;
     color: #eff6ff;
-    background: rgba(15, 23, 42, 0.15);
-    backdrop-filter: blur(6px);
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
     transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .cv-link-header:hover {
-    background: #ffffff;
-    color: #1d4ed8;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
     transform: translateY(-1px);
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.4);
 }
 
 /* Logo */
@@ -394,6 +394,18 @@ body {
     .hero-card {
         order: -1;
     }
+
+    .header-content {
+        gap: 0.8rem;
+    }
+
+    .header-left {
+        gap: 0.6rem;
+    }
+
+    .cv-link-header {
+        display: none; /* si tu veux l’enlever sur mobile sinon commente cette ligne */
+    }
 }
 
 @media (max-width: 720px) {
@@ -418,9 +430,5 @@ body {
 
     .menu-toggle {
         display: flex;
-    }
-
-    .header-content {
-        gap: 0.8rem;
     }
 }
