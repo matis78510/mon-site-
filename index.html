@@ -14,7 +14,7 @@
 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #f5f7ff; /* fond blanc très clair */
+            background: #ffffff; /* FOND BLANC PUR */
             color: #111827;
             min-height: 100vh;
         }
@@ -41,7 +41,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 16px;
-            margin-bottom: 10px; /* rapproche le hero */
+            margin-bottom: 10px;
         }
 
         .identity-block {
@@ -55,8 +55,8 @@
             height: 70px;
             border-radius: 999px;
             overflow: hidden;
-            border: 2px solid rgba(59, 130, 246, 0.7);
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.15);
+            border: 2px solid #3b82f6;
+            box-shadow: 0 6px 14px rgba(15, 23, 42, 0.15);
         }
 
         .avatar-photo img {
@@ -75,7 +75,7 @@
             color: #4b5563;
         }
 
-        /* NAV EN HAUT */
+        /* NAV */
         nav {
             display: flex;
             gap: 8px;
@@ -88,34 +88,34 @@
             border: 1px solid #e5e7eb;
             font-size: 13px;
             color: #111827;
-            background: #ffffff;
+            background: #f9fafb;
             cursor: pointer;
             transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+            box-shadow: 0 3px 8px rgba(15, 23, 42, 0.05);
             text-decoration: none;
         }
 
         nav a:hover {
             background: #e0ebff;
             transform: translateY(-1px);
-            box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 6px 12px rgba(15, 23, 42, 0.08);
         }
 
-        /* HERO AVEC IMAGE */
+        /* HERO : TEXTE + PHOTO */
         .hero {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 14px;
-            margin-bottom: 12px; /* carte plus proche d'en dessous */
+            margin-bottom: 12px;
             align-items: center;
         }
 
         .hero-text {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 14px 14px 16px;
+            background: #f9fafb;
+            border-radius: 18px;
+            padding: 14px 16px 16px;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
         }
 
         .hero-text h2 {
@@ -129,26 +129,26 @@
         }
 
         .hero-photo {
-            background: #ffffff;
-            border-radius: 16px;
+            background: #f9fafb;
+            border-radius: 18px;
             padding: 6px;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
         }
 
         .hero-photo img {
             width: 100%;
-            border-radius: 12px;
+            border-radius: 14px;
             object-fit: cover;
         }
 
-        /* CARTE HOBBIES & PROFIL */
+        /* HOBBIES & PROFIL */
         .hobbies-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 14px 14px 16px;
+            background: #f9fafb;
+            border-radius: 18px;
+            padding: 14px 16px 16px;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
             margin-bottom: 14px;
         }
 
@@ -163,7 +163,7 @@
             line-height: 1.5;
         }
 
-        /* CARTES SECTIONS */
+        /* GRILLE 2 COLONNES */
         .grid-two {
             display: grid;
             grid-template-columns: 1.6fr 1.2fr;
@@ -172,11 +172,11 @@
         }
 
         .card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 14px 14px 16px;
+            background: #f9fafb;
+            border-radius: 18px;
+            padding: 14px 16px 16px;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
         }
 
         .card h2 {
@@ -206,7 +206,7 @@
 
         .card-image {
             margin-bottom: 8px;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
         }
 
@@ -230,7 +230,7 @@
             font-size: 11px;
             margin-right: 6px;
             margin-top: 4px;
-            background: #f3f4ff;
+            background: #e0ebff;
             color: #111827;
         }
 
@@ -241,7 +241,7 @@
             background: #3b82f6;
         }
 
-        /* SECTION CV EN BAS */
+        /* SECTION CV */
         .cv-section {
             margin-top: 14px;
         }
@@ -260,24 +260,24 @@
         }
 
         .cv-image-wrapper {
-            background: #ffffff;
-            border-radius: 14px;
+            background: #f9fafb;
+            border-radius: 16px;
             padding: 6px;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
             cursor: pointer;
             transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
         }
 
         .cv-image-wrapper img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 12px;
             object-fit: cover;
         }
 
         .cv-image-wrapper:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 26px rgba(37, 99, 235, 0.18);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
             border-color: #3b82f6;
         }
 
@@ -305,7 +305,7 @@
             align-items: center;
             gap: 6px;
             color: #111827;
-            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+            box-shadow: 0 3px 8px rgba(15, 23, 42, 0.05);
         }
 
         .contact-pill span {
@@ -366,7 +366,7 @@
         </nav>
     </header>
 
-    <!-- HERO : TEXTE + PHOTO -->
+    <!-- HERO -->
     <section id="accueil" class="hero">
         <div class="hero-text">
             <h2>Bienvenue sur mon portfolio</h2>
@@ -382,24 +382,25 @@
         </div>
     </section>
 
-    <!-- HOBBIES & PROFIL (nouvelle case) -->
+    <!-- HOBBIES & PROFIL -->
     <section class="hobbies-card" id="hobbies">
         <h2>Hobbies & profil</h2>
         <p>
-            Je pratique le handball depuis plusieurs années, un sport qui m’a appris la
-            rigueur, l’esprit d’équipe et l’engagement sur le terrain comme en dehors. 
-            Après un bac STMG, j’ai choisi de poursuivre en Licence Commerce pour 
-            lier ma passion du sport à mon intérêt pour le business et le marketing.
+            Je pratique le handball depuis plusieurs années, un sport qui m’a appris la rigueur,
+            l’entraide et l’esprit d’équipe. Sur le terrain comme dans mes projets, je cherche
+            toujours à donner le maximum et à faire progresser le collectif.
         </p>
         <p>
-            La licence à l’ILEPS et mon alternance me permettent aujourd’hui de développer
-            des compétences concrètes en communication, relation client et gestion de
-            projet, tout en préparant mon avenir professionnel avec une vraie perspective
-            de rémunération et d’évolution dans le secteur du sport et des loisirs.
+            Après un bac STMG, j’ai choisi de poursuivre en Licence Commerce pour lier ma passion
+            du sport à mon intérêt pour le business et le marketing. La formation à l’ILEPS,
+            combinée à mon alternance, me permet aujourd’hui de développer des compétences
+            concrètes en communication, relation client et gestion de projet, avec l’objectif
+            de construire une carrière dans le secteur du sport et des loisirs, tout en ayant
+            une vraie perspective de rémunération et d’évolution.
         </p>
     </section>
 
-    <!-- ETUDES + TRAVAIL AVEC IMAGES -->
+    <!-- ETUDES + TRAVAIL -->
     <section class="grid-two">
         <section id="etudes" class="card">
             <div class="card-image">
@@ -423,9 +424,9 @@
             <h2>Expériences professionnelles</h2>
             <h3>Alternant – Les Bains de Seine Mauldre</h3>
             <p>
-                Accueil et information des publics, mise en avant des offres,
-                création de supports de communication (affiches, posts réseaux sociaux),
-                participation aux évènements et à la fidélisation de la clientèle.
+                Accueil et information des publics, mise en avant des offres, création de supports
+                de communication (affiches, posts réseaux sociaux), participation aux évènements
+                et à la fidélisation de la clientèle.
             </p>
             <p style="margin-top:6px;">
                 🔗
@@ -470,7 +471,7 @@
         </section>
     </section>
 
-    <!-- SECTION CV EN BAS AVEC IMAGE CLIQUABLE -->
+    <!-- CV -->
     <section id="cv" class="cv-section">
         <div class="card cv-card">
             <div class="cv-text">
@@ -495,10 +496,10 @@
 </div>
 
 <script>
-    // Année automatique
+    // Année auto
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Scroll doux sur les liens du menu
+    // Scroll doux
     document.querySelectorAll('nav a[href^="#"]').forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
