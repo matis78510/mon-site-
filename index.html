@@ -1,533 +1,206 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Matis Rodrigues</title>
-    <style>
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #ffffff;
-            color: #111827;
-            min-height: 100vh;
-        }
-
-        a {
-            text-decoration: none;
-            color: #1d4ed8;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* LAYOUT GLOBAL */
-        .page {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 18px 16px 32px;
-        }
-
-        /* HEADER */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 10px;
-        }
-
-        .identity-block {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .avatar-photo {
-            width: 70px;
-            height: 70px;
-            border-radius: 999px;
-            overflow: hidden;
-            border: 2px solid #3b82f6;
-            box-shadow: 0 6px 14px rgba(15, 23, 42, 0.15);
-        }
-
-        .avatar-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .name-title h1 {
-            font-size: 26px;
-            letter-spacing: 0.03em;
-        }
-
-        .name-title p {
-            font-size: 14px;
-            color: #4b5563;
-        }
-
-        /* NAV */
-        nav {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            padding: 6px 14px;
-            border-radius: 999px;
-            border: 1px solid #e5e7eb;
-            font-size: 13px;
-            color: #111827;
-            background: #f9fafb;
-            cursor: pointer;
-            transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-            box-shadow: 0 3px 8px rgba(15, 23, 42, 0.05);
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            background: #e0ebff;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 12px rgba(15, 23, 42, 0.08);
-        }
-
-        /* HERO : TEXTE + PHOTO */
-        .hero {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 14px;
-            margin-bottom: 12px;
-            align-items: center;
-        }
-
-        .hero-text {
-            background: #f9fafb;
-            border-radius: 18px;
-            padding: 14px 16px 16px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
-        }
-
-        .hero-text h2 {
-            font-size: 20px;
-            margin-bottom: 6px;
-        }
-
-        .hero-text p {
-            font-size: 14px;
-            color: #374151;
-        }
-
-        .hero-photo {
-            background: #f9fafb;
-            border-radius: 18px;
-            padding: 6px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
-        }
-
-        .hero-photo img {
-            width: 100%;
-            border-radius: 14px;
-            object-fit: cover;
-        }
-
-        /* HOBBIES & PROFIL */
-        .hobbies-card {
-            background: #f9fafb;
-            border-radius: 18px;
-            padding: 14px 16px 16px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
-            margin-bottom: 14px;
-        }
-
-        .hobbies-card h2 {
-            font-size: 18px;
-            margin-bottom: 6px;
-        }
-
-        .hobbies-card p {
-            font-size: 13px;
-            color: #374151;
-            line-height: 1.5;
-        }
-
-        /* GRILLE 2 COLONNES */
-        .grid-two {
-            display: grid;
-            grid-template-columns: 1.6fr 1.2fr;
-            gap: 14px;
-            margin-bottom: 14px;
-        }
-
-        .card {
-            background: #f9fafb;
-            border-radius: 18px;
-            padding: 16px 16px 18px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
-        }
-
-        .card h2 {
-            font-size: 18px;
-            margin-bottom: 6px;
-        }
-
-        .card h3 {
-            font-size: 14px;
-            color: #1d4ed8;
-            margin-bottom: 4px;
-        }
-
-        .card p,
-        .card li {
-            font-size: 13px;
-            color: #374151;
-        }
-
-        ul {
-            padding-left: 18px;
-        }
-
-        ul li {
-            margin-bottom: 4px;
-        }
-
-        .card-image {
-            margin-bottom: 10px;
-            border-radius: 14px;
-            overflow: hidden;
-        }
-
-        .card-image img {
-            width: 100%;
-            height: 200px;          /* <<< PHOTO PLUS GRANDE */
-            object-fit: cover;
-        }
-
-        .tag-row {
-            margin-top: 8px;
-        }
-
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 3px 9px;
-            border-radius: 999px;
-            border: 1px solid #e5e7eb;
-            font-size: 11px;
-            margin-right: 6px;
-            margin-top: 4px;
-            background: #e0ebff;
-            color: #111827;
-        }
-
-        .tag-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 999px;
-            background: #3b82f6;
-        }
-
-        /* SECTION CV */
-        .cv-section {
-            margin-top: 14px;
-        }
-
-        .cv-card {
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr);
-            gap: 14px;
-            align-items: center;
-        }
-
-        .cv-text p {
-            font-size: 13px;
-            color: #374151;
-            margin-top: 4px;
-        }
-
-        .cv-image-wrapper {
-            background: #f9fafb;
-            border-radius: 16px;
-            padding: 6px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
-            cursor: pointer;
-            transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
-        }
-
-        .cv-image-wrapper img {
-            width: 100%;
-            border-radius: 12px;
-            object-fit: cover;
-        }
-
-        .cv-image-wrapper:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
-            border-color: #3b82f6;
-        }
-
-        .cv-hint {
-            font-size: 11px;
-            color: #6b7280;
-            margin-top: 4px;
-        }
-
-        /* CONTACT */
-        .contact-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .contact-pill {
-            font-size: 13px;
-            padding: 6px 11px;
-            border-radius: 999px;
-            border: 1px solid #e5e7eb;
-            background: #ffffff;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #111827;
-            box-shadow: 0 3px 8px rgba(15, 23, 42, 0.05);
-        }
-
-        .contact-pill span {
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        footer {
-            margin-top: 18px;
-            font-size: 11px;
-            text-align: center;
-            color: #9ca3af;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .hero {
-                grid-template-columns: 1fr;
-            }
-            .grid-two {
-                grid-template-columns: 1fr;
-            }
-            .cv-card {
-                grid-template-columns: 1fr;
-            }
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            nav {
-                margin-top: 6px;
-            }
-            .card-image img {
-                height: 160px; /* un peu moins haut sur mobile */
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Matis Rodrigues</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Barre de progression au scroll -->
+  <div id="scroll-progress"></div>
 
-<div class="page">
-    <!-- HEADER -->
-    <header>
-        <div class="identity-block">
-            <div class="avatar-photo">
-                <img src="matis.jpg" alt="Photo de Matis Rodrigues">
-            </div>
-            <div class="name-title">
-                <h1>Matis Rodrigues</h1>
-                <p>Étudiant en Licence 3 Commerce · Alternant Marketing & Communication</p>
-            </div>
+  <!-- Navigation -->
+  <header class="top-nav">
+    <div class="nav-inner container">
+      <div class="nav-left">
+        <div class="nav-avatar">
+          <!-- Mets ici ta petite photo ronde -->
+          <img src="matis-avatar.jpg" alt="Photo de Matis Rodrigues">
         </div>
+        <div class="nav-info">
+          <h1>Matis Rodrigues</h1>
+          <p>Étudiant en Licence 3 Commerce · Alternant Marketing &amp; Communication</p>
+        </div>
+        <a href="#cv" class="cv-chip">Mon CV</a>
+      </div>
 
-        <nav>
-            <a href="#accueil">Accueil</a>
-            <a href="#etudes">Études</a>
-            <a href="#travail">Travail</a>
-            <a href="#projets">Projets</a>
-            <a href="#cv">CV</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+      <nav class="nav-links">
+        <a href="#accueil" class="nav-link active">Accueil</a>
+        <a href="#etudes" class="nav-link">Études</a>
+        <a href="#travail" class="nav-link">Travail</a>
+        <a href="#projets" class="nav-link">Projets</a>
+        <a href="#cv" class="nav-link">CV</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- HERO -->
-    <section id="accueil" class="hero">
-        <div class="hero-text">
+  <main>
+    <!-- ACCUEIL -->
+    <section id="accueil" class="section">
+      <div class="container">
+        <div class="grid-hero">
+          <!-- Carte bienvenue -->
+          <article class="card card-hero reveal">
             <h2>Bienvenue sur mon portfolio</h2>
             <p>
-                Passionné par le commerce, le marketing et le milieu du sport / loisirs,
-                je construis mon expérience entre formation à l’ILEPS et alternance aux
-                Bains de Seine Mauldre. Ce site présente mon parcours, mes expériences
-                et mes projets.
+              Passionné par le commerce, le marketing et le milieu du sport / loisirs,
+              je construis mon expérience entre formation à l’ILEPS et alternance aux Bains de Seine Mauldre.
+              Ce site présente mon parcours, mes expériences et mes projets.
             </p>
-        </div>
-        <div class="hero-photo">
-            <img src="matis.jpg" alt="Matis Rodrigues">
-        </div>
-    </section>
+          </article>
 
-    <!-- HOBBIES & PROFIL -->
-    <section class="hobbies-card" id="hobbies">
-        <h2>Hobbies & profil</h2>
-        <p>
+          <!-- Grande photo -->
+          <article class="card card-photo reveal">
+            <!-- Mets ici ta grande photo verticale -->
+            <img src="matis-portrait.jpg" alt="Matis Rodrigues">
+          </article>
+        </div>
+
+        <!-- Hobbies & profil -->
+        <article class="card card-full reveal">
+          <h3>Hobbies &amp; profil</h3>
+          <p>
             Je pratique le handball depuis plusieurs années, un sport qui m’a appris la rigueur,
-            l’entraide et l’esprit d’équipe. Sur le terrain comme dans mes projets, je cherche
-            toujours à donner le maximum et à faire progresser le collectif.
-        </p>
-        <p>
-            Après un bac STMG, j’ai choisi de poursuivre en Licence Commerce pour lier ma passion
-            du sport à mon intérêt pour le business et le marketing. La formation à l’ILEPS,
-            combinée à mon alternance, me permet aujourd’hui de développer des compétences
-            concrètes en communication, relation client et gestion de projet, avec l’objectif
-            de construire une carrière dans le secteur du sport et des loisirs, tout en ayant
-            une vraie perspective de rémunération et d’évolution.
-        </p>
+            l’entraide et l’esprit d’équipe. Sur le terrain comme dans mes projets,
+            je cherche toujours à donner le maximum et à faire progresser le collectif.
+          </p>
+          <p>
+            Après un bac STMG, j’ai choisi de poursuivre en Licence Commerce pour lier ma passion du sport
+            à mon intérêt pour le business et le marketing. La formation à l’ILEPS, combinée à mon alternance,
+            me permet aujourd’hui de développer des compétences concrètes en communication, relation client
+            et gestion de projet, avec l’objectif de construire une carrière dans le secteur du sport
+            et des loisirs, tout en ayant une vraie perspective de rémunération et d’évolution.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <!-- ETUDES + TRAVAIL (BLOCS PLUS GRANDS) -->
-    <section class="grid-two">
-        <section id="etudes" class="card">
+    <!-- ETUDES + TRAVAIL -->
+    <section id="etudes" class="section">
+      <div class="container">
+        <div class="grid-two">
+          <!-- Parcours académique -->
+          <article class="card card-with-image reveal">
             <div class="card-image">
-                <img src="ileps.jpg" alt="ILEPS Cergy">
+              <!-- Photo de l’ILEPS -->
+              <img src="ileps.jpg" alt="ILEPS Cergy">
             </div>
-            <h2>Parcours académique</h2>
-            <h3>Licence 3 Commerce – ILEPS (Cergy)</h3>
-            <p>
-                L’ILEPS est une école tournée vers le sport et le management, ce qui me permet
-                de suivre une formation commerciale tout en restant proche de cet univers.
-                Au programme : marketing, stratégie commerciale, gestion de la relation client,
-                communication et projets orientés sport / loisirs.
-            </p>
-            <p>
-                Les travaux de groupe, études de cas et projets terrain m’aident à développer
-                des compétences concrètes que je peux directement appliquer en entreprise.
-            </p>
-            <p style="margin-top:6px;">
-                🔗 <a href="https://www.ileps.fr" target="_blank">Découvrir l’ILEPS</a>
-            </p>
-        </section>
+            <div class="card-body">
+              <h3>Parcours académique</h3>
+              <p class="subtitle">Licence 3 Commerce – ILEPS (Cergy)</p>
+              <p>
+                Marketing, stratégie commerciale, gestion de la relation client, communication
+                et projets professionnalisants orientés sport / loisirs.
+              </p>
+              <a href="https://www.ileps.fr" target="_blank" class="link-inline">
+                Découvrir l’ILEPS
+              </a>
+            </div>
+          </article>
 
-        <section id="travail" class="card">
+          <!-- Expériences professionnelles -->
+          <article id="travail" class="card card-with-image reveal">
             <div class="card-image">
-                <img src="les-bains.jpg" alt="Les Bains de Seine Mauldre">
+              <!-- Photo des Bains de Seine Mauldre -->
+              <img src="bains.jpg" alt="Les Bains de Seine Mauldre">
             </div>
-            <h2>Expériences professionnelles</h2>
-            <h3>Alternant – Les Bains de Seine Mauldre</h3>
-            <p>
-                Dans ce centre aquatique et de bien-être, je participe à l’accueil des clients,
-                à l’information sur les activités et à la mise en avant des offres commerciales.
-                Je contribue également à la création de visuels et de contenus pour la
-                communication (affiches, posts réseaux sociaux, messages d’information…).
-            </p>
-            <p>
-                Cette expérience me permet de travailler au contact du public, de comprendre
-                les attentes des différentes clientèles (familles, seniors, sportifs) et de
-                renforcer mes compétences en vente, fidélisation et animation.
-            </p>
-            <p style="margin-top:6px;">
-                🔗
-                <a href="https://www.lesbainsdeseinemauldre.fr" target="_blank">
-                    Site des Bains de Seine Mauldre
-                </a>
-            </p>
-        </section>
-    </section>
-
-    <!-- PROJETS / COMPETENCES + CONTACT -->
-    <section class="grid-two">
-        <section id="projets" class="card">
-            <h2>Projets & compétences</h2>
-            <h3>Compétences clés</h3>
-            <ul>
-                <li>Communication digitale (réseaux sociaux, visuels Canva, rédaction de contenus)</li>
-                <li>Marketing opérationnel et terrain</li>
-                <li>Relation client & accueil</li>
-                <li>Organisation d’évènements et animations</li>
-            </ul>
-
-            <div class="tag-row">
-                <span class="tag"><span class="tag-dot"></span>Marketing sportif</span>
-                <span class="tag"><span class="tag-dot"></span>Communication</span>
-                <span class="tag"><span class="tag-dot"></span>Gestion de projet</span>
+            <div class="card-body">
+              <h3>Expériences professionnelles</h3>
+              <p class="subtitle">Alternant – Les Bains de Seine Mauldre</p>
+              <p>
+                Accueil et information des publics, mise en avant des offres, création de supports
+                de communication (affiches, posts réseaux sociaux), participation aux évènements
+                et à la fidélisation de la clientèle.
+              </p>
+              <a href="https://www.lesbainsdeseinemauldre.fr" target="_blank" class="link-inline">
+                Site des Bains de Seine Mauldre
+              </a>
             </div>
-        </section>
-
-        <section id="contact" class="card">
-            <h2>Contact</h2>
-            <p>Ouvert aux opportunités en marketing, communication et événementiel.</p>
-
-            <div class="contact-row">
-                <a href="mailto:matis.rodrigues@ileps.fr" class="contact-pill">
-                    <span>✉️</span> matis.rodrigues@ileps.fr
-                </a>
-                <a href="https://www.linkedin.com/in/matis-rodrigues-46b703295/" target="_blank" class="contact-pill">
-                    <span>in</span> LinkedIn
-                </a>
-            </div>
-        </section>
-    </section>
-
-    <!-- CV -->
-    <section id="cv" class="cv-section">
-        <div class="card cv-card">
-            <div class="cv-text">
-                <h2>Mon CV</h2>
-                <p>
-                    Retrouvez l’ensemble de mon parcours, de mes expériences et compétences
-                    en un coup d’œil sur mon CV.
-                </p>
-                <p class="cv-hint">
-                    Cliquez sur l’aperçu à droite pour l’ouvrir en grand.
-                </p>
-            </div>
-            <a href="cv.png" target="_blank" class="cv-image-wrapper">
-                <img src="cv.png" alt="CV de Matis Rodrigues">
-            </a>
+          </article>
         </div>
+      </div>
     </section>
 
-    <footer>
-        © <span id="year"></span> – Portfolio de Matis Rodrigues
-    </footer>
-</div>
+    <!-- PROJETS & COMPÉTENCES -->
+    <section id="projets" class="section">
+      <div class="container">
+        <article class="card card-full reveal">
+          <h3>Projets &amp; compétences</h3>
+          <h4>Compétences clés</h4>
+          <ul class="list">
+            <li>Communication digitale (réseaux sociaux, visuels Canva, rédaction de contenus)</li>
+            <li>Marketing opérationnel et terrain</li>
+            <li>Relation client &amp; accueil</li>
+            <li>Organisation d’évènements et animations</li>
+          </ul>
 
-<script>
-    // Année auto
-    document.getElementById('year').textContent = new Date().getFullYear();
+          <div class="tag-row">
+            <span class="tag">Marketing sportif</span>
+            <span class="tag">Communication</span>
+            <span class="tag">Gestion de projet</span>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    // Scroll doux
-    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 16,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-</script>
+    <!-- CV + CONTACT -->
+    <section id="cv" class="section">
+      <div class="container grid-two">
+        <!-- Texte CV -->
+        <article class="card card-full reveal">
+          <h3>Mon CV</h3>
+          <p>
+            Retrouvez l’ensemble de mon parcours, de mes expériences et compétences
+            en un coup d’œil sur mon CV.
+          </p>
+          <p>
+            Cliquez sur l’aperçu à droite pour l’ouvrir en grand ou téléchargez-le en PDF.
+          </p>
 
+          <!-- Mets ici le vrai lien vers ton PDF -->
+          <a href="cv-matis.pdf" target="_blank" class="btn-primary">
+            Ouvrir / télécharger mon CV
+          </a>
+        </article>
+
+        <!-- Aperçu CV -->
+        <article class="card card-cv reveal">
+          <!-- Image de ton CV exporté en PNG/JPG -->
+          <a href="cv-matis.pdf" target="_blank" class="cv-preview-link">
+            <img src="cv-matis.jpg" alt="CV de Matis Rodrigues" class="cv-image">
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <article class="card card-full reveal">
+          <h3>Contact</h3>
+          <p>
+            Ouvert aux opportunités en marketing, communication et événementiel.
+          </p>
+          <div class="contact-row">
+            <a href="mailto:matis.rodrigues@ileps.fr" class="contact-pill">
+              <span>✉️</span> matis.rodrigues@ileps.fr
+            </a>
+            <a href="https://www.linkedin.com/in/matis-rodrigues-46b703295/" target="_blank" class="contact-pill">
+              <span>in</span> LinkedIn
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Matis Rodrigues · Portfolio étudiant</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
