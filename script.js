@@ -1,47 +1,56 @@
-// Active l'année dynamique dans le footer
-const yearSpan = document.getElementById("year");
-if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-}
+// Année dans le footer
+document.getElementById("year").textContent = new Date().getFullYear();
 
-// Menu burger (mobile)
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+// Barre de progression au scroll
+const progressBar = document.getElementById("scroll-progress");
 
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY || window.pageYOffset;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+  progressBar.style.transform = `scaleX(${progress})`;
+});
+
+// Animation "reveal" des cartes
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
     });
+  },
+  {
+    threshold: 0.25,
+  }
+);
 
-    // Ferme le menu quand on clique sur un lien
-    navLinks.addEventListener("click", (e) => {
-        if (e.target.classList.contains("nav-link")) {
-            navLinks.classList.remove("open");
-        }
+revealElements.forEach((el) => revealObserver.observe(el));
+
+// Highlight de la nav selon la section visible
+const sections = document.querySelectorAll("main section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${id}`
+          );
+        });
+      }
     });
-}
+  },
+  {
+    threshold: 0.4,
+  }
+);
 
-// Met à jour le lien actif dans la navbar au scroll
-const sections = document.querySelectorAll("section[id]");
-const navLinkEls = document.querySelectorAll(".nav-link");
-
-function onScroll() {
-    const scrollPos = window.scrollY + 120; // marge pour le header
-
-    sections.forEach((section) => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const id = section.getAttribute("id");
-
-        if (scrollPos >= top && scrollPos < top + height) {
-            navLinkEls.forEach((link) => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === `#${id}`) {
-                    link.classList.add("active");
-                }
-            });
-        }
-    });
-}
-
-window.addEventListener("scroll", onScroll);
+sections.forEach((section) => sectionObserver.observe(section));
