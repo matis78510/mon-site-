@@ -14,7 +14,7 @@
 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #ffffff; /* FOND BLANC PUR */
+            background: #ffffff;
             color: #111827;
             min-height: 100vh;
         }
@@ -174,9 +174,9 @@
         .card {
             background: #f9fafb;
             border-radius: 18px;
-            padding: 14px 16px 16px;
+            padding: 16px 16px 18px;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
         }
 
         .card h2 {
@@ -205,14 +205,14 @@
         }
 
         .card-image {
-            margin-bottom: 8px;
-            border-radius: 12px;
+            margin-bottom: 10px;
+            border-radius: 14px;
             overflow: hidden;
         }
 
         .card-image img {
             width: 100%;
-            height: 120px;
+            height: 200px;          /* <<< PHOTO PLUS GRANDE */
             object-fit: cover;
         }
 
@@ -338,6 +338,9 @@
             nav {
                 margin-top: 6px;
             }
+            .card-image img {
+                height: 160px; /* un peu moins haut sur mobile */
+            }
         }
     </style>
 </head>
@@ -400,7 +403,7 @@
         </p>
     </section>
 
-    <!-- ETUDES + TRAVAIL -->
+    <!-- ETUDES + TRAVAIL (BLOCS PLUS GRANDS) -->
     <section class="grid-two">
         <section id="etudes" class="card">
             <div class="card-image">
@@ -409,8 +412,14 @@
             <h2>Parcours académique</h2>
             <h3>Licence 3 Commerce – ILEPS (Cergy)</h3>
             <p>
-                Marketing, stratégie commerciale, gestion de la relation client, communication
-                et projets professionnalisants orientés sport / loisirs.
+                L’ILEPS est une école tournée vers le sport et le management, ce qui me permet
+                de suivre une formation commerciale tout en restant proche de cet univers.
+                Au programme : marketing, stratégie commerciale, gestion de la relation client,
+                communication et projets orientés sport / loisirs.
+            </p>
+            <p>
+                Les travaux de groupe, études de cas et projets terrain m’aident à développer
+                des compétences concrètes que je peux directement appliquer en entreprise.
             </p>
             <p style="margin-top:6px;">
                 🔗 <a href="https://www.ileps.fr" target="_blank">Découvrir l’ILEPS</a>
@@ -424,9 +433,15 @@
             <h2>Expériences professionnelles</h2>
             <h3>Alternant – Les Bains de Seine Mauldre</h3>
             <p>
-                Accueil et information des publics, mise en avant des offres, création de supports
-                de communication (affiches, posts réseaux sociaux), participation aux évènements
-                et à la fidélisation de la clientèle.
+                Dans ce centre aquatique et de bien-être, je participe à l’accueil des clients,
+                à l’information sur les activités et à la mise en avant des offres commerciales.
+                Je contribue également à la création de visuels et de contenus pour la
+                communication (affiches, posts réseaux sociaux, messages d’information…).
+            </p>
+            <p>
+                Cette expérience me permet de travailler au contact du public, de comprendre
+                les attentes des différentes clientèles (familles, seniors, sportifs) et de
+                renforcer mes compétences en vente, fidélisation et animation.
             </p>
             <p style="margin-top:6px;">
                 🔗
