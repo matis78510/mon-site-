@@ -14,7 +14,7 @@
 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #f5f7ff; /* fond blanc très léger */
+            background: #f5f7ff; /* fond blanc très clair */
             color: #111827;
             min-height: 100vh;
         }
@@ -32,7 +32,7 @@
         .page {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px 16px 32px;
+            padding: 18px 16px 32px;
         }
 
         /* HEADER */
@@ -41,7 +41,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 16px;
-            margin-bottom: 16px;
+            margin-bottom: 10px; /* rapproche le hero */
         }
 
         .identity-block {
@@ -106,7 +106,7 @@
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 14px;
-            margin-bottom: 18px; /* moins d’espace */
+            margin-bottom: 12px; /* carte plus proche d'en dessous */
             align-items: center;
         }
 
@@ -142,12 +142,33 @@
             object-fit: cover;
         }
 
+        /* CARTE HOBBIES & PROFIL */
+        .hobbies-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 14px 14px 16px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+            margin-bottom: 14px;
+        }
+
+        .hobbies-card h2 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .hobbies-card p {
+            font-size: 13px;
+            color: #374151;
+            line-height: 1.5;
+        }
+
         /* CARTES SECTIONS */
         .grid-two {
             display: grid;
             grid-template-columns: 1.6fr 1.2fr;
             gap: 14px;
-            margin-bottom: 14px; /* moins de trou */
+            margin-bottom: 14px;
         }
 
         .card {
@@ -327,7 +348,6 @@
     <header>
         <div class="identity-block">
             <div class="avatar-photo">
-                <!-- Photo de toi : matis.jpg -->
                 <img src="matis.jpg" alt="Photo de Matis Rodrigues">
             </div>
             <div class="name-title">
@@ -346,7 +366,7 @@
         </nav>
     </header>
 
-    <!-- HERO AVEC PRESENTATION + GROSSE IMAGE -->
+    <!-- HERO : TEXTE + PHOTO -->
     <section id="accueil" class="hero">
         <div class="hero-text">
             <h2>Bienvenue sur mon portfolio</h2>
@@ -360,6 +380,23 @@
         <div class="hero-photo">
             <img src="matis.jpg" alt="Matis Rodrigues">
         </div>
+    </section>
+
+    <!-- HOBBIES & PROFIL (nouvelle case) -->
+    <section class="hobbies-card" id="hobbies">
+        <h2>Hobbies & profil</h2>
+        <p>
+            Je pratique le handball depuis plusieurs années, un sport qui m’a appris la
+            rigueur, l’esprit d’équipe et l’engagement sur le terrain comme en dehors. 
+            Après un bac STMG, j’ai choisi de poursuivre en Licence Commerce pour 
+            lier ma passion du sport à mon intérêt pour le business et le marketing.
+        </p>
+        <p>
+            La licence à l’ILEPS et mon alternance me permettent aujourd’hui de développer
+            des compétences concrètes en communication, relation client et gestion de
+            projet, tout en préparant mon avenir professionnel avec une vraie perspective
+            de rémunération et d’évolution dans le secteur du sport et des loisirs.
+        </p>
     </section>
 
     <!-- ETUDES + TRAVAIL AVEC IMAGES -->
