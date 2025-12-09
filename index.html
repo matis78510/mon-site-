@@ -1,258 +1,395 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rodrigues Matis - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Matis Rodrigues</title>
+    <style>
+        /* --- RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #0f172a 0%, #020617 45%, #000000 100%);
+            color: #e5e7eb;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- LAYOUT GLOBAL --- */
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 16px 48px;
+        }
+
+        /* --- HEADER / HERO --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .identity {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 999px;
+            border: 2px solid rgba(59, 130, 246, 0.6);
+            background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            color: #e5e7eb;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .name-block h1 {
+            font-size: 26px;
+            letter-spacing: 0.03em;
+        }
+
+        .name-block p {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        /* --- BOUTON CV EN ROND BLEU --- */
+        .cv-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cv-button {
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: #1d4ed8;
+            border: 1px solid #60a5fa;
+            font-size: 14px;
+            font-weight: 600;
+            color: #e5e7eb;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 0 18px rgba(37, 99, 235, 0.6);
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+
+        .cv-button span.icon {
+            width: 18px;
+            height: 18px;
+            border-radius: 999px;
+            border: 1px solid #bfdbfe;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+        }
+
+        .cv-button:hover {
+            transform: translateY(-1px) scale(1.02);
+            background: #2563eb;
+            box-shadow: 0 0 24px rgba(37, 99, 235, 0.9);
+        }
+
+        /* --- NAV --- */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+
+        .nav-pill {
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            font-size: 13px;
+            color: #cbd5f5;
+            cursor: pointer;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .nav-pill:hover {
+            background: rgba(37, 99, 235, 0.2);
+            border-color: rgba(59, 130, 246, 0.9);
+            transform: translateY(-1px);
+        }
+
+        .nav-pill.primary {
+            background: rgba(37, 99, 235, 0.23);
+            border-color: rgba(59, 130, 246, 1);
+        }
+
+        /* --- GRID CONTENU --- */
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1.4fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 850px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .cv-wrapper {
+                align-self: flex-start;
+            }
+        }
+
+        /* --- CARDS --- */
+        .card {
+            background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.22), rgba(15, 23, 42, 0.97));
+            border-radius: 18px;
+            padding: 18px 16px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            box-shadow: 0 0 25px rgba(15, 23, 42, 0.9);
+            margin-bottom: 16px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .card h3 {
+            font-size: 14px;
+            color: #a5b4fc;
+            margin-bottom: 4px;
+        }
+
+        .card p,
+        .card li {
+            font-size: 13px;
+            color: #d1d5db;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            font-size: 11px;
+            margin-right: 6px;
+            margin-top: 6px;
+        }
+
+        .tag-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: #38bdf8;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        ul li {
+            margin-bottom: 4px;
+        }
+
+        /* --- FOOTER / CONTACT --- */
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .contact-pill {
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            background: rgba(15, 23, 42, 0.85);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-pill span {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        footer {
+            margin-top: 24px;
+            font-size: 11px;
+            text-align: center;
+            color: #6b7280;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- HEADER / NAVBAR -->
-    <header class="header">
-        <div class="container header-content">
-
-            <!-- Gauche : logo + bouton CV -->
-            <div class="header-left">
-                <div class="logo">
-                    <span class="logo-mark">RM</span>
-                    <span class="logo-text">Rodrigues&nbsp;Matis</span>
-                </div>
-
-                <!-- Bouton Mon CV -->
-                <a
-                    href="CV-matis-rodrigues.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cv-link-header"
-                >
-                    Mon CV
-                </a>
+<div class="page">
+    <!-- HEADER -->
+    <header>
+        <div class="identity">
+            <div class="avatar">MR</div>
+            <div class="name-block">
+                <h1>Matis Rodrigues</h1>
+                <p>Étudiant en Licence 3 Commerce · Alternant Marketing & Communication</p>
             </div>
+        </div>
 
-            <!-- Droite : navigation -->
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li><a href="#qui-suis-je" class="nav-link active">Qui suis-je ?</a></li>
-                    <li><a href="#etudes" class="nav-link">Études</a></li>
-                    <li><a href="#travail" class="nav-link">Travail</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-
-            <!-- Burger menu pour mobile -->
-            <button class="menu-toggle" aria-label="Ouvrir le menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <div class="cv-wrapper">
+            <!-- BOUTON CV QUI OUVRE CVPerso.pdf -->
+            <a href="CVPerso.pdf" target="_blank" class="cv-button">
+                <span class="icon">⇩</span>
+                <span>Mon CV</span>
+            </a>
         </div>
     </header>
 
-    <!-- SECTION HERO -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <p class="hero-tag">Étudiant en STAPS & expérience en événementiel</p>
-                <h1>Salut, moi c'est <span class="accent">Matis Rodrigues</span></h1>
-                <p class="hero-subtitle">
-                    Étudiant dynamique, passionné par le sport, l'événementiel et l'expérience client.
-                    Entre études à l’ILEPS et missions aux Bains de Seine Mauldre, je développe des
-                    compétences à la fois humaines et professionnelles.
+    <!-- NAV -->
+    <nav>
+        <button class="nav-pill primary" data-target="section-profil">Qui suis-je ?</button>
+        <button class="nav-pill" data-target="section-etudes">Études</button>
+        <button class="nav-pill" data-target="section-experiences">Expériences</button>
+        <button class="nav-pill" data-target="section-projets">Projets & compétences</button>
+        <button class="nav-pill" data-target="section-contact">Contact</button>
+    </nav>
+
+    <!-- CONTENU -->
+    <div class="grid">
+        <!-- COLONNE GAUCHE -->
+        <div>
+            <!-- Profil -->
+            <section id="section-profil" class="card">
+                <h2>Qui suis-je ?</h2>
+                <p>
+                    Actuellement en Licence 3 Commerce à l’ILEPS (Cergy), je développe mes compétences
+                    en marketing, communication digitale et gestion de projet. En parallèle, je suis en alternance
+                    aux <strong>Bains de Seine Mauldre</strong>, où je participe à la visibilité de la structure
+                    et à l’animation de la relation client.
                 </p>
-                <div class="hero-buttons">
-                    <a href="#etudes" class="btn btn-primary">Voir mes études</a>
-                    <a href="#travail" class="btn btn-outline">Mes expériences pro</a>
-                </div>
-            </div>
+            </section>
 
-            <div class="hero-card">
-                <div class="hero-photo">
-                    <img src="matis.jpg" alt="Photo de Rodrigues Matis" />
+            <!-- Études -->
+            <section id="section-etudes" class="card">
+                <h2>Parcours académique</h2>
+
+                <h3>Licence 3 Commerce – ILEPS (Cergy)</h3>
+                <p>
+                    Marketing, stratégie commerciale, gestion de la relation client, communication et projets
+                    professionnalisants orientés sport / loisirs.
+                </p>
+                <p style="margin-top:6px;">
+                    🔗
+                    <a href="https://www.ileps.fr" target="_blank">Découvrir l’ILEPS</a>
+                </p>
+            </section>
+
+            <!-- Projets / Compétences -->
+            <section id="section-projets" class="card">
+                <h2>Projets & compétences</h2>
+                <h3>Compétences clés</h3>
+                <ul>
+                    <li>Communication digitale (réseaux sociaux, visuels Canva, rédaction de contenus)</li>
+                    <li>Marketing opérationnel et terrain</li>
+                    <li>Relation client & accueil</li>
+                    <li>Organisation d’évènements et animations</li>
+                </ul>
+
+                <div style="margin-top:10px;">
+                    <span class="tag"><span class="tag-dot"></span>Marketing sportif</span>
+                    <span class="tag"><span class="tag-dot"></span>Communication</span>
+                    <span class="tag"><span class="tag-dot"></span>Gestion de projet</span>
                 </div>
-                <div class="hero-info">
-                    <p><strong>Ville :</strong> Cergy (FR)</p>
-                    <p><strong>Études :</strong> Licence STAPS</p>
-                    <p><strong>Poste actuel :</strong> Employé polyvalent / accueil & événementiel</p>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
 
-    <!-- SECTION QUI SUIS-JE -->
-    <section id="qui-suis-je" class="section">
-        <div class="container">
-            <h2 class="section-title">Qui suis-je ?</h2>
-            <p class="section-intro">
-                Je suis un étudiant sérieux, impliqué et à l’écoute, qui aime le contact humain,
-                le travail en équipe et les environnements dynamiques. J’aime lier 
-                <strong>sport</strong>, <strong>bien-être</strong> et <strong>relation client</strong>.
-            </p>
+        <!-- COLONNE DROITE -->
+        <div>
+            <!-- Expériences -->
+            <section id="section-experiences" class="card">
+                <h2>Expériences professionnelles</h2>
 
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Qualités</h3>
-                    <ul class="list">
-                        <li>Esprit d’équipe et bonne communication</li>
-                        <li>Adaptabilité (événementiel, accueil, vente)</li>
-                        <li>Sérieux, ponctualité et fiabilité</li>
-                        <li>À l’aise avec le contact client</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3>Ce que je recherche</h3>
-                    <p>
-                        Continuer à développer mes compétences dans des structures liées
-                        au sport, au bien-être ou aux loisirs, tout en gagnant en 
-                        responsabilité et en autonomie sur le terrain.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION ÉTUDES -->
-    <section id="etudes" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Études</h2>
-            <p class="section-intro">
-                Je poursuis mes études à l’ILEPS, une école spécialisée dans le sport, 
-                l’éducation et la motricité humaine.
-            </p>
-
-            <div class="grid-2">
-                <div class="card card-school">
-                    <h3>ILEPS – Cergy</h3>
-                    <p>
-                        Formation orientée sport, pédagogie et gestion de projet. 
-                        Elle me permet de développer des compétences autant pratiques 
-                        que théoriques.
-                    </p>
-                    <ul class="list">
-                        <li>Projet professionnel lié au sport / encadrement</li>
-                        <li>Travail en groupe & gestion d’événements</li>
-                        <li>Approche scientifique du sport</li>
-                    </ul>
-
-                    <a
-                        href="https://www.ileps.fr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-primary btn-sm"
-                    >
-                        Découvrir l’ILEPS
+                <h3>Alternant – Les Bains de Seine Mauldre</h3>
+                <p>
+                    Accueil, information et orientation des publics, mise en avant des offres,
+                    création de supports de communication (affiches, posts réseaux sociaux),
+                    participation aux évènements et à la fidélisation de la clientèle.
+                </p>
+                <p style="margin-top:6px;">
+                    🔗
+                    <a href="https://www.lesbainsdeseinemauldre.fr" target="_blank">
+                        Site des Bains de Seine Mauldre
                     </a>
-                </div>
+                </p>
+            </section>
 
-                <div class="card card-photo">
-                    <div class="image-wrapper">
-                        <img src="ileps.jpg" alt="Bâtiment de l’ILEPS à Cergy" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- Contact -->
+            <section id="section-contact" class="card">
+                <h2>Contact</h2>
+                <p>Ouvert aux opportunités en marketing, communication et événementiel.</p>
 
-    <!-- SECTION TRAVAIL -->
-    <section id="travail" class="section">
-        <div class="container">
-            <h2 class="section-title">Travail & expériences</h2>
-            <p class="section-intro">
-                J’ai eu l’opportunité de travailler aux Bains de Seine Mauldre, 
-                une structure axée sur le bien-être, la détente et l’expérience client.
-            </p>
-
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Les Bains de Seine Mauldre</h3>
-                    <p>Missions réalisées :</p>
-                    <ul class="list">
-                        <li>Accueil des clients et accompagnement</li>
-                        <li>Gestion des réservations et encaissements</li>
-                        <li>Vente de prestations et conseils</li>
-                        <li>Participation à l’organisation d’événements</li>
-                        <li>Communication et image de la structure</li>
-                    </ul>
-                    <a
-                        href="https://www.ucpa.com/aqua-stadium/aubergenville?utm_campaign=PMAX%20-%20HM%20-%20Sport%20Trotter%20-%20Aventures%20-%20Fil%20Rouge%20-%20Conv%20-%20Annuel%20-%20Desti&utm_source=google&utm_medium=cpc&utm_content=marquage_manuel&utm_source_platform=Google+Ads&utm_id=22395365712&gad_source=1&gad_campaignid=22401840215&gbraid=0AAAAADqFyYljfxVfTTf0zivJ7KiK_W4ix&gclid=Cj0KCQiA6NTJBhDEARIsAB7QHD34zbwAnDWoO456hWv_hp7Toy7Y0uGkzeWFhxnNlgwwaITdN6fYzCEaAs32EALw_wcB"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-outline btn-sm"
-                    >
-                        Découvrir Les Bains de Seine Mauldre
+                <div class="contact-row">
+                    <a href="mailto:adresse@mail.com" class="contact-pill">
+                        <span>✉️</span> adresse@mail.com
                     </a>
+                    <a href="https://www.linkedin.com/in/matis-rodrigues-46b703295/" target="_blank" class="contact-pill">
+                        <span>in</span> LinkedIn
+                    </a>
+                    <!-- Tu peux compléter avec ton numéro si tu veux -->
+                    <!-- <div class="contact-pill"><span>📱</span> 06 00 00 00 00</div> -->
                 </div>
-
-                <div class="card card-photo">
-                    <div class="image-wrapper">
-                        <img src="les-bains.jpg" alt="Les Bains de Seine Mauldre" />
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
+    </div>
 
-    <!-- SECTION CONTACT -->
-    <section id="contact" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p class="section-intro">
-                Tu peux me contacter facilement pour un projet, un job étudiant, un stage ou une collaboration.
-            </p>
-
-            <div class="grid-2 contact-grid">
-                <div class="card">
-                    <h3>Mes infos</h3>
-                    <ul class="contact-list">
-                        <li>
-                            <span class="contact-label">Email :</span>
-                            <a href="mailto:matis.rodrigues@ileps.fr">matis.rodrigues@ileps.fr</a>
-                        </li>
-                        <li>
-                            <span class="contact-label">LinkedIn :</span>
-                            <a
-                                href="https://www.linkedin.com/in/matis-rodrigues-46b703295/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                linkedin.com/in/matis-rodrigues-46b703295
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3>Pourquoi me contacter ?</h3>
-                    <ul class="list">
-                        <li>Job étudiant / renfort en accueil ou événementiel</li>
-                        <li>Stages en lien avec le sport ou le bien-être</li>
-                        <li>Projets nécessitant une personne sérieuse et motivée</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>© <span id="year"></span> Rodrigues Matis - Tous droits réservés.</p>
-            <p>
-                Contact :
-                <a href="mailto:matis.rodrigues@ileps.fr">matis.rodrigues@ileps.fr</a>
-                •
-                <a
-                    href="https://www.linkedin.com/in/matis-rodrigues-46b703295/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Mon LinkedIn
-                </a>
-            </p>
-        </div>
+    <footer>
+        © <span id="year"></span> – Portfolio de Matis Rodrigues
     </footer>
+</div>
+
+<script>
+    // Année automatique dans le footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll doux sur les boutons de navigation
+    document.querySelectorAll('.nav-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            const section = document.getElementById(targetId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
